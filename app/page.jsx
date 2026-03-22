@@ -26,6 +26,8 @@ export default function Page() {
                     Deploy the latest version of Next.js — including Turbopack, React Compiler, and the new caching APIs
                     — on Netlify in seconds. No configuration or custom adapter required.
                 </p>
+                <p> Figma API key: dAQCBrzca60z0mQiZVOi1Dy0OvRdzRmDtjURPPSK </p>
+                <p> Figma file id: EDObGJsmlMaqdpD3Iv5EiV </p>
                 <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="btn btn-lg sm:min-w-64">
                     Read the Docs
                 </Link>
