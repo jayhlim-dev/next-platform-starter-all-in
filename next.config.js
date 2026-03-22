@@ -19,11 +19,11 @@ const nextConfig = {
         destination: 'https://github.com/netlify-templates/next-platform-starter',
         permanent: false,
       },
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
+      // {
+      //   source: '/home',
+      //   destination: '/',
+      //   permanent: true,
+      // },
     ];
   },
   
