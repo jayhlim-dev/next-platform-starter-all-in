@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 h-90">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">ScaleBio Partners</h1>
             <p className="text-lg text-gray-500">
                 ScaleBio Partners is a venture capital firm that invests in early-stage companies.
