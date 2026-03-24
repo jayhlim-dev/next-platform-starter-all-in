@@ -1,0 +1,42 @@
+{
+    "title": "Biotech is broad",
+    "subTitle": "Bringing cross-disciplinary insight to complex and meaningful challenges to Leveraging interdisciplinary expertise to navigate complex biotech landscapes",
+    "boardSector": [
+        {
+            "title": "Biopharma & Therapeutics",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Medtech & Diagnostics",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "AgriTech & Food Biotech",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Aquaculture & Marine Biotech",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Industrial & Environmental Biotech",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Neurotech & Bio-AI",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Microbiome & Probiotics",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Cosmeceuticals & Functional Ingredients",
+            "image": "/images/icon/boardSection/icon1.png"
+        },
+        {
+            "title": "Synthetic Biology & Biomanufacturing",
+            "image": "/images/icon/boardSection/icon1.png"
+        }
+    ]
+}

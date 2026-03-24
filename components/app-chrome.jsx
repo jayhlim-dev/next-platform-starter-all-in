@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Footer } from './footer';
 import { Header } from './header';
 import { HomeOverlay } from './home-overlay';
+import BaseLayout from './wrapper/BaseLayout';
 
 export function AppChrome({ children }) {
     const pathname = usePathname();
@@ -14,13 +15,10 @@ export function AppChrome({ children }) {
     }
 
     return (
-        <div className="relative pb-6">
-            {/* <HomeOverlay /> */}
-            <div className="z-10 mx-auto flex w-full max-w-330 grow flex-col">
-                {/* <Header /> */}
-                <main className="grow">{children}</main>
-                <Footer />
-            </div>
-        </div>
+        <BaseLayout>
+            <Header />
+            <main className="grow">{children}</main>
+            <Footer />
+        </BaseLayout>
     );
 }

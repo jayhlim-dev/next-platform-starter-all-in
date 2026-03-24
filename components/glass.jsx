@@ -1,7 +1,7 @@
 export function Glass({ children, className }) {
     return (
         <div
-            className={['rounded-[20px] bg-white/2 shadow-[0_4px_24px_rgba(0,0,0,0.08)] backdrop-blur-xl', className]
+            className={['border border-white/10 bg-[#091642]/26 backdrop-blur-[28px]', className]
                 .filter(Boolean)
                 .join(' ')}
         >
