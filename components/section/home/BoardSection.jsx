@@ -13,11 +13,15 @@ export default function BoardSection() {
 
             <div className="grid grid-cols-3 gap-6">
                 {boardSector.map((sector) => (
-                    <Glass key={sector.title} type="light" className="py-3 px-5 flex gap-6 rounded-2xl items-center">
+                    <Glass
+                        key={sector.title}
+                        type="light"
+                        className="py-3 px-5 flex rounded-2xl items-center justify-between"
+                    >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}
-                        <Image src={sector.image} alt={'section'} width={80} height={80} />
+                        <Image src={sector.image} alt={'section'} width={89} height={89} />
                         {/* </div> */}
-                        <p className="w-full max-w-60 text-base font-medium ">{sector.title}</p>
+                        <p className="w-full max-w-56 text-base font-bold ">{sector.title}</p>
                     </Glass>
                 ))}
             </div>
