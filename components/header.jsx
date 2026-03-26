@@ -18,7 +18,7 @@ export function Header() {
     const isActivePage = (href) => currActivePage === href;
 
     return (
-        <header className="flex w-full items-center justify-center sticky top-8 ">
+        <header className="flex w-full items-center justify-center sticky top-8 z-50">
             <Glass
                 className={clsx(
                     'z-50 mx-auto flex w-full items-center justify-between gap-6',

@@ -1,0 +1,22 @@
+{
+    "title": "Built for Complex Biotech Decisions",
+    "subTitle": "Clarity across technical, commercial, and capital strategy",
+    "supportSector": [
+        {
+            "title": "Technical & Clinical Validation",
+            "description": "Assess pipeline feasibility, risks, and development roadmap"
+        },
+        {
+            "title": "Market & Commercial Strategy",
+            "description": "Define target segments, pricing logic, and differentiation"
+        },
+        {
+            "title": "Business Architecture",
+            "description": "Operating model, capital strategy, and positioning"
+        },
+        {
+            "title": "Launch & Scale Execution",
+            "description": "Go-to-market, partnerships, and investor readiness"
+        }
+    ]
+}
