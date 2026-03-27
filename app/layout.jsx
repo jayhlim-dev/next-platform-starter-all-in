@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
-            <body className={`${poppins.className} relative antialiased text-white bg-[#0c1f47]`}>
+            <body className={`${poppins.className} relative antialiased text-white bg-[#0c1f47] `}>
                 <AppChrome>{children}</AppChrome>
             </body>
         </html>

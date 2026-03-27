@@ -77,7 +77,7 @@ export function Footer() {
                                 </div>
                             ))}
                             {item.button && (
-                                <Glass className="py-3 px-5 flex rounded-lg items-center justify-center border-0.5! border-white!">
+                                <Glass className="py-3 px-5 flex rounded-lg items-center justify-center">
                                     <Link
                                         href={item.button.href}
                                         className="text-xs no-underline text-white font-medium"

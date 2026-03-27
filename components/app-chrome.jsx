@@ -14,6 +14,8 @@ export function AppChrome({ children }) {
         return <>{children}</>;
     }
 
+    // base layout is the wrapper for the entire app
+    // change the root padding on baseLayout to change the padding for the entire app
     return (
         <BaseLayout>
             <Header />

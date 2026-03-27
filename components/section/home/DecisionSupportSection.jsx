@@ -5,7 +5,7 @@ import { Glass } from 'components/glass';
 export default function DecisionSupportSection() {
     const { title, subTitle, supportSector } = supportData;
     return (
-        <Glass type="light" className="p-10 py-8! flex rounded-2xl flex-col gap-6 text-white">
+        <Glass type="light" useHoverAnimation={false} className="p-10 py-8! flex rounded-2xl flex-col gap-6 text-white">
             <div className="flex flex-col gap-2">
                 <h2 className="text-2xl font-bold">{title}</h2>
                 <p className="text-sm max-w-2xl">{subTitle}</p>
