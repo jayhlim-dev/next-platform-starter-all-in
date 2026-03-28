@@ -1,0 +1,54 @@
+{
+    "title": "Our Services",
+    "subTitle": "Scalebio supports early-stage biotech companies in moving from technical validation to commercial readiness.",
+    "content": {
+        "workflow_process": {
+            "title": "Our Process Workflow",
+            "description": "Our approach is structured, collaborative, and tailored to each company's needs.",
+            "process_steps": [
+                {
+                    "title": "Initial contact",
+                    "description": "An initial discussion to understand your goals, challenges, and areas of focus."
+                },
+                {
+                    "title": "Company evaluation",
+                    "description": "A detailed evaluation of the company's technology, market, and team."
+                },
+                {
+                    "title": "Discussion of focus points",
+                    "description": "A detailed discussion of the focus points and the areas of focus."
+                },
+                {
+                    "title": "What we can offer",
+                    "description": "A detailed discussion of the what we can offer and the value we can bring to the table."
+                },
+                {
+                    "title": "Contract agreement",
+                    "description": "A contract agreement to formalize the collaboration and define the scope of work."
+                }
+            ]
+        },
+        "how_we_work": {
+            "title": "How We Support Your Business",
+            "description": "Helping early-stage biotech ventures turn scientific potential into commercial readiness.",
+            "work_steps": [
+                {
+                    "title": "Product Pipeline Strategy",
+                    "description": "Advising on the optimization and prioritization of the product development pipeline."
+                },
+                {
+                    "title": "Market Analysis Support",
+                    "description": "Delivering insights and support related to market trends, competitive landscape, and market entry strategies."
+                },
+                {
+                    "title": "Business Development Advisory",
+                    "description": "Supporting strategic partnerships, regulatory planning, funding opportunities, and go-to-market strategy."
+                },
+                {
+                    "title": "Pitch Deck Review",
+                    "description": "Reviewing and providing input on pitch decks for investment and partnership presentations."
+                }
+            ]
+        }
+    }
+}

@@ -14,7 +14,16 @@ function getHoverClasses(type) {
     return 'hover:border-white/25 hover:bg-white/[0.08] ';
 }
 
-export function Glass({ children, className, type = 'dark', useHoverAnimation = true, useBorderOnHoverOnly = false }) {
+export function Glass({
+    children,
+    className,
+    type = 'dark',
+    useHoverAnimation = true,
+    useBorderOnHoverOnly = false,
+    onClick,
+    onMouseEnter,
+    onMouseLeave
+}) {
     const bgColor = getBgColor(type);
 
     return (
@@ -28,6 +37,9 @@ export function Glass({ children, className, type = 'dark', useHoverAnimation = 
                 bgColor,
                 className
             )}
+            onClick={onClick ? () => onClick() : undefined}
+            onMouseEnter={onMouseEnter ? () => onMouseEnter() : undefined}
+            onMouseLeave={onMouseLeave ? () => onMouseLeave() : undefined}
         >
             {children}
         </div>

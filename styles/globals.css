@@ -161,7 +161,41 @@
     }
 }
 
+@keyframes workflow-step-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes workflow-progress-fill {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
 @layer utilities {
+    .animate-workflow-step-panel {
+        animation: workflow-step-panel-in 0.35s ease-out both;
+    }
+
+    .workflow-progress-bar-fill {
+        width: 100%;
+        transform-origin: left;
+        animation-name: workflow-progress-fill;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
     .max-w-6xs {
         max-width: 10rem;
     }
