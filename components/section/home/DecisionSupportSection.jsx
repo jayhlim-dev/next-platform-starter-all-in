@@ -16,6 +16,8 @@ export default function DecisionSupportSection() {
                         key={sector.title}
                         type="light"
                         className="py-6 px-7 rounded-2xl items-center justify-between h-100 flex flex-col gap-2"
+                        useHoverAnimation={true}
+                        useBorderOnHoverOnly={true}
                     >
                         <h3 className="text-2xl font-bold leading-9">{sector.title}</h3>
                         <div className="flex gap-3 flex-col">

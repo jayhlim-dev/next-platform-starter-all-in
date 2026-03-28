@@ -14,16 +14,17 @@ function getHoverClasses(type) {
     return 'hover:border-white/25 hover:bg-white/[0.08] ';
 }
 
-export function Glass({ children, className, type = 'dark', useHoverAnimation = true }) {
+export function Glass({ children, className, type = 'dark', useHoverAnimation = true, useBorderOnHoverOnly = false }) {
     const bgColor = getBgColor(type);
 
     return (
         <div
             className={clsx(
-                'border border-white/10 backdrop-blur-[28px]',
+                'border border-white/6 backdrop-blur-[28px]',
                 'transition-all duration-500 ease-in-out',
                 useHoverAnimation && type !== 'dark' && 'hover:-translate-y-0.5',
-                getHoverClasses(type),
+                useBorderOnHoverOnly && 'border-0! hover:border!',
+                useHoverAnimation && type !== 'dark' && getHoverClasses(type),
                 bgColor,
                 className
             )}
