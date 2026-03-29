@@ -1,0 +1,77 @@
+{
+    "title": "Let's turn<br/>your breakthrough <br/>into business",
+    "content": {
+        "owner_details": {
+            "name": "Kevin Antonio Cahya",
+            "title": "Founder & Principal Consultant",
+            "education": "M.Eng. Bioengineering, UC Berkeley",
+            "description": "Kevin developed end-to-end technical expertise across the biotech value chain—beginning with discovery research at UW-Madison, advancing into translational protein development at Bio-Techne, and culminating in large-scale process optimization and automation at Eli Lilly and Merck.</br></br>Building on this foundation, he transitioned into Eli Lilly's business development and later deepened his exposure to the startup landscape at Berkeley SkyDeck, Berkeley StEP, and LBNL, while earning his Master's in Bioengineering at UC Berkeley. Post-graduation, he explored venture formation through Hesperian Ventures, and currently serves with Nucleate and multiple VC firms as a venture scout.</br></br>At ScaleBio Partners, Kevin draws on this multidisciplinary journey to help biotech startups sharpen their technical narratives, refine commercialization strategies, and prepare effectively for fundraising and strategic partnerships.",
+            "social_media": {
+                "linkedin": "https://www.linkedin.com/in/kevin-antonio-cahya-a07409148"
+            }
+        },
+        "how_we_work": {
+            "title": "How We Support Your Business",
+            "description": "Helping early-stage biotech ventures turn scientific potential into commercial readiness.",
+            "work_steps": [
+                {
+                    "title": "Product Pipeline Strategy",
+                    "description": "Advising on the optimization and prioritization of the product development pipeline."
+                },
+                {
+                    "title": "Market Analysis Support",
+                    "description": "Delivering insights and support related to market trends, competitive landscape, and market entry strategies."
+                },
+                {
+                    "title": "Business Development Advisory",
+                    "description": "Supporting strategic partnerships, regulatory planning, funding opportunities, and go-to-market strategy."
+                },
+                {
+                    "title": "Pitch Deck Review",
+                    "description": "Reviewing and providing input on pitch decks for investment and partnership presentations."
+                }
+            ]
+        }
+    },
+    "form": {
+        "title": "Contact Us",
+        "form_fields": [
+            {
+                "label": "Name",
+                "name": "name",
+                "placeholder": "Enter your full name",
+                "required": true
+            },
+            {
+                "label": "Role/Title",
+                "name": "role_title",
+                "placeholder": "e.g., Founder, CSO, Director, Investor",
+                "required": false
+            },
+            {
+                "label": "Company / organization",
+                "name": "company_organization",
+                "placeholder": "Enter your company or institution name",
+                "required": true
+            },
+            {
+                "label": "Work Email",
+                "name": "work_email",
+                "placeholder": "name@company.com",
+                "required": true
+            },
+            {
+                "label": "Area of Interest",
+                "name": "area_of_interest",
+                "placeholder": "Enter the topic you'd like to discuss",
+                "required": false
+            },
+            {
+                "label": "Project Overview",
+                "name": "project_overview",
+                "placeholder": "Briefly describe your scientific focus, development stage, and the support you are seeking.",
+                "required": true
+            }
+        ]
+    }
+}

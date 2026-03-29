@@ -17,7 +17,7 @@ export default function HowWeSupportSection() {
                     <Glass
                         key={step.title}
                         type="light"
-                        className="py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20!"
+                        className="py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20! max-w-[280px]"
                         useHoverAnimation={true}
                     >
                         <p className="text-2xl font-extralight w-full text-white">0{String(index + 1)}</p>
