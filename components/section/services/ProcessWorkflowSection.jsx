@@ -76,13 +76,13 @@ export default function ProcessWorkflowSection() {
     return (
         <div className="flex flex-col gap-6 text-white">
             <div className="flex flex-col gap-2">
-                <h2 className="text-2xl font-bold">{workflow_process.title}</h2>
+                <h2 className="text-3xl text-[34px] font-bold">{workflow_process.title}</h2>
                 <p className="text-sm max-w-2xl">{workflow_process.description}</p>
             </div>
 
             <div className="grid grid-cols-[1.2fr_1fr] gap-4 items-center">
                 <Glass
-                    className="relative col-span-1 flex min-h-[280px] flex-col overflow-hidden rounded-3xl! p-8"
+                    className="relative col-span-1 flex min-h-[280px] flex-col overflow-hidden rounded-3xl! p-8 "
                     onMouseEnter={handleDetailPanelEnter}
                     onMouseLeave={handleDetailPanelLeave}
                 >
@@ -126,7 +126,7 @@ export default function ProcessWorkflowSection() {
                                     key={step.title}
                                     type="light"
                                     className={clsx(
-                                        'flex gap-4 text-start rounded-2xl px-3  min-h-[62px] items-center',
+                                        'flex gap-4 text-start border-white/20! rounded-2xl px-3  min-h-[62px] items-center',
                                         index === activeStep ? 'bg-white/8!' : ''
                                     )}
                                     onMouseEnter={() => scheduleStepHoverDelayed(index)}
@@ -146,7 +146,7 @@ export default function ProcessWorkflowSection() {
                                 key={step.title}
                                 type="light"
                                 className={clsx(
-                                    'flex text-start rounded-2xl px-3 gap-4 min-h-[62px] items-center',
+                                    'flex text-start border-white/20! rounded-2xl px-3 gap-4 min-h-[62px] items-center',
                                     index + 3 === activeStep ? 'bg-white/8!' : ''
                                 )}
                                 onMouseEnter={() => scheduleStepHoverDelayed(index + 3)}
