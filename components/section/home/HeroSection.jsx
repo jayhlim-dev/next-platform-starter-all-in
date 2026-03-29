@@ -1,17 +1,32 @@
+import Image from 'next/image';
 import Link from 'next/link';
+
+import secondaryLogo from 'public/images/logo/secondary-logo.png';
 
 export default function HeroSection() {
     return (
-        <div className="flex flex-col gap-4 h-90 justify-center items-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">ScaleBio Partners</h1>
-            <p className="text-lg text-gray-500">
-                ScaleBio Partners is a venture capital firm that invests in early-stage companies.
-            </p>
-            <button className="bg-white px-7 py-2 rounded-md text-blue-900 font-bold w-fit text-sm">
-                <Link href="/contact" className="text-blue-900 no-underline">
-                    LET'S TALK
+        <section
+            className="flex w-full min-h-[min(38vh,420px)] flex-col justify-center gap-8 py-14 pb-0!"
+            aria-label="Hero"
+        >
+            <div className="flex w-full flex-col items-start gap-6">
+                <Image
+                    src={secondaryLogo}
+                    alt="ScaleBio Partners"
+                    width={776}
+                    height={242}
+                    className="h-auto w-full object-contain max-w-[776px]"
+                    sizes="100vw"
+                    priority
+                />
+
+                <Link
+                    href="/get-in-touch"
+                    className="inline-flex w-fit items-center justify-center rounded-xl bg-white px-12 py-3 text-base font-bold uppercase tracking-wide text-[#1B4887] no-underline transition hover:bg-white/90 min-h-[52px]"
+                >
+                    Let&apos;s talk
                 </Link>
-            </button>
-        </div>
+            </div>
+        </section>
     );
 }

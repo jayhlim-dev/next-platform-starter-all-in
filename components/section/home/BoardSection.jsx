@@ -16,12 +16,12 @@ export default function BoardSection() {
                     <Glass
                         key={sector.title}
                         type="light"
-                        className="py-3 px-5 flex rounded-2xl items-center justify-between"
+                        className="py-3 px-5 flex rounded-2xl items-center justify-between border-white/20! gap-4!"
                     >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}
                         <Image src={sector.image} alt={'section'} width={89} height={89} />
                         {/* </div> */}
-                        <p className="w-full max-w-56 text-base font-bold ">{sector.title}</p>
+                        <p className="w-full max-w-56 text-base font-semibold ">{sector.title}</p>
                     </Glass>
                 ))}
             </div>
