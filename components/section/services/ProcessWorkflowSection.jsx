@@ -135,6 +135,7 @@ export default function ProcessWorkflowSection() {
                 <Glass
                     className={clsx(
                         'relative col-span-1 flex min-h-[305px] flex-col overflow-hidden lg:rounded-3xl! p-8',
+                        'select-none touch-manipulation [-webkit-touch-callout:none]',
                         'rounded-none! border border-t-white/30 lg:border-none! lg:min-h-[280px]'
                     )}
                     onMouseEnter={handleDetailPanelEnter}
@@ -142,6 +143,7 @@ export default function ProcessWorkflowSection() {
                     onPointerDown={startLongPressPause}
                     onPointerUp={endLongPressPause}
                     onPointerCancel={endLongPressPause}
+                    onContextMenu={(e) => e.preventDefault()}
                 >
                     <div
                         key={activeStep}
@@ -184,6 +186,7 @@ export default function ProcessWorkflowSection() {
                                     type="light"
                                     className={clsx(
                                         'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                        'select-none touch-manipulation [-webkit-touch-callout:none]',
                                         'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
                                         index === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                     )}
@@ -193,6 +196,7 @@ export default function ProcessWorkflowSection() {
                                     onPointerDown={startLongPressPause}
                                     onPointerUp={endLongPressPause}
                                     onPointerCancel={endLongPressPause}
+                                    onContextMenu={(e) => e.preventDefault()}
                                 >
                                     <div
                                         className={clsx(
@@ -217,6 +221,7 @@ export default function ProcessWorkflowSection() {
                                 type="light"
                                 className={clsx(
                                     'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                    'select-none touch-manipulation [-webkit-touch-callout:none]',
                                     'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
                                     index + 3 === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                 )}
@@ -226,6 +231,7 @@ export default function ProcessWorkflowSection() {
                                 onPointerDown={startLongPressPause}
                                 onPointerUp={endLongPressPause}
                                 onPointerCancel={endLongPressPause}
+                                onContextMenu={(e) => e.preventDefault()}
                             >
                                 <div
                                     className={clsx(

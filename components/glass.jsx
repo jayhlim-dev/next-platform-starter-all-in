@@ -28,7 +28,8 @@ export function Glass({
     onMouseLeave,
     onPointerDown,
     onPointerUp,
-    onPointerCancel
+    onPointerCancel,
+    onContextMenu
 }) {
     const bgColor = getBgColor(type);
 
@@ -49,6 +50,7 @@ export function Glass({
             onPointerDown={onPointerDown}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerCancel}
+            onContextMenu={onContextMenu}
         >
             {children}
         </div>

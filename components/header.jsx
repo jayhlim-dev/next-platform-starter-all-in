@@ -3,9 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import mainLogo from 'public/images/logo/main-scalebio-logo.png';
 import burgerMenuIcon from 'public/images/icon/burger.svg';
 import { Glass } from './glass';
+import { MobileNavOverlay } from './mobile-nav-overlay';
 import clsx from 'clsx';
 
 const navItems = [
@@ -17,6 +19,21 @@ const navItems = [
 export function Header() {
     const currActivePage = usePathname();
     const isActivePage = (href) => currActivePage === href;
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [currActivePage]);
+
+    useEffect(() => {
+        const mq = window.matchMedia('(min-width: 768px)');
+        const closeIfDesktop = () => {
+            if (mq.matches) setMobileMenuOpen(false);
+        };
+        mq.addEventListener('change', closeIfDesktop);
+        closeIfDesktop();
+        return () => mq.removeEventListener('change', closeIfDesktop);
+    }, []);
 
     return (
         <header className="flex w-full items-center justify-center sticky top-8 z-50">
@@ -59,9 +76,24 @@ export function Header() {
                 </div>
 
                 <div className="md:hidden">
-                    <Image src={burgerMenuIcon} alt="Menu" className="h-auto w-[23px]" priority />
+                    <button
+                        type="button"
+                        className="flex cursor-pointer items-center justify-center rounded-lg p-2 -m-2 border-0 bg-transparent text-inherit"
+                        onClick={() => setMobileMenuOpen((open) => !open)}
+                        aria-expanded={mobileMenuOpen}
+                        aria-controls="mobile-nav-dialog"
+                        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                    >
+                        <Image src={burgerMenuIcon} alt="" className="h-auto w-[23px]" priority aria-hidden />
+                    </button>
                 </div>
             </Glass>
+
+            <MobileNavOverlay
+                open={mobileMenuOpen}
+                onClose={() => setMobileMenuOpen(false)}
+                navItems={navItems}
+            />
         </header>
     );
 }
