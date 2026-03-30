@@ -1,23 +1,29 @@
 import Link from 'next/link';
 import { Glass } from 'components/glass';
 import ServicesHeroSection from './json/ServicesHeroSection.json';
+import clsx from 'clsx';
 
 export default function HowWeSupportSection() {
     const { content } = ServicesHeroSection;
     const { how_we_work } = content;
     const { title, description, work_steps } = how_we_work;
     return (
-        <div className="flex flex-col gap-6 text-white py-[110px]">
-            <div className="flex flex-col gap-2">
-                <h2 className="text-3xl text-[34px] font-bold">{title}</h2>
-                <p className="text-sm max-w-2xl">{description}</p>
+        <div className={clsx('flex flex-col gap-6 text-white py-[26px]', 'lg:py-[110px]')}>
+            <div className={clsx('flex flex-col gap-2 px-[30px]', 'lg:px-0!')}>
+                <h2 className={clsx('text-xl font-bold', 'lg:text-3xl lg:text-[34px]')}>{title}</h2>
+                <p className={clsx('text-xs max-w-2xl', 'md:text-sm')}>{description}</p>
             </div>
-            <div className="grid grid-cols-4 gap-6">
+            <div
+                className={clsx(
+                    'flex flex-row  overflow-x-auto no-scrollbar px-8 gap-6',
+                    'lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-x-hidden lg:px-0'
+                )}
+            >
                 {work_steps.map((step, index) => (
                     <Glass
                         key={step.title}
                         type="light"
-                        className="py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20! max-w-[280px]"
+                        className="py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20! max-w-[280px] min-w-[280px]"
                         useHoverAnimation={true}
                     >
                         <p className="text-2xl font-extralight w-full text-white">0{String(index + 1)}</p>

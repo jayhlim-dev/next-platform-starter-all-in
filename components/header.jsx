@@ -23,8 +23,8 @@ export function Header() {
             <Glass
                 className={clsx(
                     'z-50 mx-auto flex w-full items-center justify-between gap-6',
-                    'max-w-[85%] px-5 py-4 rounded-full',
-                    'md:px-10 md:rounded-3xl md:py-6'
+                    'px-5 py-4 rounded-full max-w-[95%] ',
+                    'md:px-10 md:rounded-3xl md:py-6 lg:max-w-[85%] '
                 )}
             >
                 <Link href="/" aria-label="ScaleBio Partners home">

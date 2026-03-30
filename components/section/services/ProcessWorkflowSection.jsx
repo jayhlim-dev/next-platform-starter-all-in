@@ -72,17 +72,20 @@ export default function ProcessWorkflowSection() {
     };
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
-    const textSizeClass = currentDescriptionLength > 17 ? 'text-4xl' : 'text-5xl';
+    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-4xl' : 'lg:text-5xl';
     return (
-        <div className="flex flex-col gap-6 text-white">
-            <div className="flex flex-col gap-2">
-                <h2 className="text-3xl text-[34px] font-bold">{workflow_process.title}</h2>
-                <p className="text-sm max-w-2xl">{workflow_process.description}</p>
+        <div className={clsx('flex flex-col gap-6 text-white')}>
+            <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
+                <h2 className={clsx('text-xl font-bold', 'lg:text-3xl lg:text-[34px]')}>{workflow_process.title}</h2>
+                <p className="text-xs max-w-2xl">{workflow_process.description}</p>
             </div>
 
-            <div className="grid grid-cols-[1.2fr_1fr] gap-4 items-center">
+            <div className={clsx('flex flex-col gap-6 items-center', 'lg:grid-cols-[1.2fr_1fr] lg:grid lg:gap-4')}>
                 <Glass
-                    className="relative col-span-1 flex min-h-[280px] flex-col overflow-hidden rounded-3xl! p-8 "
+                    className={clsx(
+                        'relative col-span-1 flex min-h-[305px] flex-col overflow-hidden lg:rounded-3xl! p-8',
+                        'rounded-none! border border-t-white/30 lg:border-none! lg:min-h-[280px]'
+                    )}
                     onMouseEnter={handleDetailPanelEnter}
                     onMouseLeave={handleDetailPanelLeave}
                 >
@@ -95,7 +98,7 @@ export default function ProcessWorkflowSection() {
                         </p>
 
                         <div className="flex flex-col gap-4">
-                            <h3 className={clsx('font-medium capitalize', textSizeClass)}>
+                            <h3 className={clsx('text-4xl text-[32px] font-medium capitalize', textSizeClass)}>
                                 {workflow_process.process_steps[activeStep].title}
                             </h3>
                             <div className="h-px w-[10%] bg-[#D9D9D9]" />
@@ -118,44 +121,60 @@ export default function ProcessWorkflowSection() {
                     </div>
                 </Glass>
 
-                <div className="col-span-1 grid grid-cols-2 gap-5">
-                    <div className="col-span-1 gap-5 flex flex-col max-w-[525px]">
+                <div className={clsx('col-span-1 grid grid-cols-2 gap-3 px-[28px]', 'lg:px-0! lg:gap-5')}>
+                    <div className={clsx('col-span-1 gap-3 lg:gap-5 flex flex-col max-w-[525px]')}>
                         {workflow_process.process_steps.slice(0, 3).map((step, index) => {
                             return (
                                 <Glass
                                     key={step.title}
                                     type="light"
                                     className={clsx(
-                                        'flex gap-4 text-start border-white/20! rounded-2xl px-3  min-h-[62px] items-center',
-                                        index === activeStep ? 'bg-white/8!' : ''
+                                        'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                        'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
+                                        index === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                     )}
                                     onMouseEnter={() => scheduleStepHoverDelayed(index)}
                                     onMouseLeave={cancelDelayedStepHover}
                                 >
-                                    <div className="rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center border-[0.5px] border-[#D9D9D9] color-[#D9D9D9] text-sm">
-                                        {index + 1}
+                                    <div
+                                        className={clsx(
+                                            'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-[#D9D9D9] color-[#D9D9D9]',
+                                            'text-xs font-bold border',
+                                            'lg:text-sm lg:font-normal lg:border-[0.5px]'
+                                        )}
+                                    >
+                                        {String(index + 1).padStart(2, '0')}
                                     </div>
-                                    <div className={clsx('leading-5 text-base')}>{step.title}</div>
+                                    <div className={clsx('lg:leading-5 leading-4 text-xs! lg:text-base')}>
+                                        {step.title}
+                                    </div>
                                 </Glass>
                             );
                         })}
                     </div>
-                    <div className="col-span-1 gap-5 flex flex-col max-w-[525px]">
+                    <div className={clsx('col-span-1 gap-3 lg:gap-5  flex flex-col max-w-[525px]')}>
                         {workflow_process.process_steps.slice(3).map((step, index) => (
                             <Glass
                                 key={step.title}
                                 type="light"
                                 className={clsx(
-                                    'flex text-start border-white/20! rounded-2xl px-3 gap-4 min-h-[62px] items-center',
-                                    index + 3 === activeStep ? 'bg-white/8!' : ''
+                                    'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                    'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
+                                    index + 3 === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                 )}
                                 onMouseEnter={() => scheduleStepHoverDelayed(index + 3)}
                                 onMouseLeave={cancelDelayedStepHover}
                             >
-                                <div className="text-sm rounded-full w-8 h-8 flex items-center justify-center border-[0.5px] border-[#D9D9D9] color-[#D9D9D9]">
-                                    {index + 4}
+                                <div
+                                    className={clsx(
+                                        'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-[#D9D9D9] color-[#D9D9D9]',
+                                        'text-xs font-bold border',
+                                        'lg:text-sm lg:font-normal lg:border-[0.5px]'
+                                    )}
+                                >
+                                    {String(index + 4).padStart(2, '0')}
                                 </div>
-                                <div className="text-base ">{step.title}</div>
+                                <div className={clsx('lg:leading-5 leading-4 text-xs! lg:text-base')}>{step.title}</div>
                             </Glass>
                         ))}
                     </div>
