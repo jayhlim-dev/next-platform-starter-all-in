@@ -18,13 +18,18 @@ export default function ProcessWorkflowSection() {
     const delayedHoverRef = useRef(null);
     const stepStartedAtRef = useRef(Date.now());
     const panelPauseStartedAtRef = useRef(null);
+    const longPressRef = useRef(null);
 
     useEffect(
         () => () => {
             if (delayedHoverRef.current) clearTimeout(delayedHoverRef.current);
+            if (longPressRef.current) clearTimeout(longPressRef.current);
         },
         []
     );
+
+    const canUseHover = () =>
+        typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     useEffect(() => {
         stepStartedAtRef.current = Date.now();
@@ -42,11 +47,13 @@ export default function ProcessWorkflowSection() {
     }, [activeStep, detailPanelHovered, stepCount]);
 
     const handleDetailPanelEnter = () => {
+        if (!canUseHover()) return;
         panelPauseStartedAtRef.current = Date.now();
         setDetailPanelHovered(true);
     };
 
     const handleDetailPanelLeave = () => {
+        if (!canUseHover()) return;
         if (panelPauseStartedAtRef.current != null) {
             stepStartedAtRef.current += Date.now() - panelPauseStartedAtRef.current;
             panelPauseStartedAtRef.current = null;
@@ -54,7 +61,33 @@ export default function ProcessWorkflowSection() {
         setDetailPanelHovered(false);
     };
 
+    const pauseTimer = () => {
+        if (detailPanelHovered) return;
+        panelPauseStartedAtRef.current = Date.now();
+        setDetailPanelHovered(true);
+    };
+
+    const resumeTimer = () => {
+        if (!detailPanelHovered) return;
+        if (panelPauseStartedAtRef.current != null) {
+            stepStartedAtRef.current += Date.now() - panelPauseStartedAtRef.current;
+            panelPauseStartedAtRef.current = null;
+        }
+        setDetailPanelHovered(false);
+    };
+
+    const selectStepImmediate = (step) => {
+        if (delayedHoverRef.current) {
+            clearTimeout(delayedHoverRef.current);
+            delayedHoverRef.current = null;
+        }
+        panelPauseStartedAtRef.current = null;
+        setDetailPanelHovered(false);
+        setActiveStep(step);
+    };
+
     const scheduleStepHoverDelayed = (step) => {
+        if (!canUseHover()) return;
         handleDetailPanelEnter();
         if (delayedHoverRef.current) clearTimeout(delayedHoverRef.current);
         delayedHoverRef.current = setTimeout(() => {
@@ -64,11 +97,29 @@ export default function ProcessWorkflowSection() {
     };
 
     const cancelDelayedStepHover = () => {
+        if (!canUseHover()) return;
         if (delayedHoverRef.current) {
             clearTimeout(delayedHoverRef.current);
             delayedHoverRef.current = null;
         }
         handleDetailPanelLeave();
+    };
+
+    const startLongPressPause = (e) => {
+        if (e?.pointerType !== 'touch') return;
+        if (longPressRef.current) clearTimeout(longPressRef.current);
+        longPressRef.current = setTimeout(() => {
+            longPressRef.current = null;
+            pauseTimer();
+        }, 250);
+    };
+
+    const endLongPressPause = () => {
+        if (longPressRef.current) {
+            clearTimeout(longPressRef.current);
+            longPressRef.current = null;
+        }
+        resumeTimer();
     };
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
@@ -88,6 +139,9 @@ export default function ProcessWorkflowSection() {
                     )}
                     onMouseEnter={handleDetailPanelEnter}
                     onMouseLeave={handleDetailPanelLeave}
+                    onPointerDown={startLongPressPause}
+                    onPointerUp={endLongPressPause}
+                    onPointerCancel={endLongPressPause}
                 >
                     <div
                         key={activeStep}
@@ -135,6 +189,10 @@ export default function ProcessWorkflowSection() {
                                     )}
                                     onMouseEnter={() => scheduleStepHoverDelayed(index)}
                                     onMouseLeave={cancelDelayedStepHover}
+                                    onClick={() => selectStepImmediate(index)}
+                                    onPointerDown={startLongPressPause}
+                                    onPointerUp={endLongPressPause}
+                                    onPointerCancel={endLongPressPause}
                                 >
                                     <div
                                         className={clsx(
@@ -164,6 +222,10 @@ export default function ProcessWorkflowSection() {
                                 )}
                                 onMouseEnter={() => scheduleStepHoverDelayed(index + 3)}
                                 onMouseLeave={cancelDelayedStepHover}
+                                onClick={() => selectStepImmediate(index + 3)}
+                                onPointerDown={startLongPressPause}
+                                onPointerUp={endLongPressPause}
+                                onPointerCancel={endLongPressPause}
                             >
                                 <div
                                     className={clsx(

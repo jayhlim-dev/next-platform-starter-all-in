@@ -25,7 +25,10 @@ export function Glass({
     useBorderOnHoverOnly = false,
     onClick,
     onMouseEnter,
-    onMouseLeave
+    onMouseLeave,
+    onPointerDown,
+    onPointerUp,
+    onPointerCancel
 }) {
     const bgColor = getBgColor(type);
 
@@ -43,6 +46,9 @@ export function Glass({
             onClick={onClick ? () => onClick() : undefined}
             onMouseEnter={onMouseEnter ? () => onMouseEnter() : undefined}
             onMouseLeave={onMouseLeave ? () => onMouseLeave() : undefined}
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerCancel}
         >
             {children}
         </div>
