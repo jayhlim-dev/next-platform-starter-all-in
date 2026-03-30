@@ -30,7 +30,7 @@ export default function BoardSection() {
                                 'w-full max-w-56 text-xs text-center min-h-[45px]',
                                 'md:text-base md:font-semibold md:text-left md:min-h-0',
                                 sector.title.toLocaleLowerCase().includes('cosmeceuticals') ? 'text-[11px] ' : '',
-                                sector.title.toLocaleLowerCase().includes('biomanufacturing') ? 'text-[9px] ' : '',
+                                sector.title.toLocaleLowerCase().includes('biomanufacturing') ? 'text-[9px] ' : ''
                             )}
                         >
                             {sector.title}

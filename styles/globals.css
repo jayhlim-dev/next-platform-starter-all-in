@@ -189,6 +189,53 @@
     }
 }
 
+/* Reusable UI motion — use with lib/animations.js (`animationClass`, etc.) */
+@keyframes ui-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ui-fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ui-fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ui-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @layer utilities {
     .text-2xs {
         font-size: 0.625rem;
@@ -236,5 +283,46 @@
 
     .max-w-4xs {
         max-width: 14rem;
+    }
+
+    .animate-ui-fade-in {
+        --ui-animation-duration: 350ms;
+        --ui-animation-easing: ease-out;
+        animation: ui-fade-in var(--ui-animation-duration) var(--ui-animation-easing) both;
+    }
+
+    .animate-ui-fade-in-up {
+        --ui-animation-duration: 400ms;
+        --ui-animation-easing: ease-out;
+        animation: ui-fade-in-up var(--ui-animation-duration) var(--ui-animation-easing) both;
+    }
+
+    .animate-ui-fade-in-down {
+        --ui-animation-duration: 400ms;
+        --ui-animation-easing: ease-out;
+        animation: ui-fade-in-down var(--ui-animation-duration) var(--ui-animation-easing) both;
+    }
+
+    .animate-ui-scale-in {
+        --ui-animation-duration: 350ms;
+        --ui-animation-easing: cubic-bezier(0.16, 1, 0.3, 1);
+        animation: ui-scale-in var(--ui-animation-duration) var(--ui-animation-easing) both;
+    }
+
+    /* Must follow .animate-ui-* so fast/slow/easing override preset defaults */
+    .ui-animate-duration-fast {
+        --ui-animation-duration: 200ms;
+    }
+
+    .ui-animate-duration-slow {
+        --ui-animation-duration: 550ms;
+    }
+
+    .ui-animate-ease-out {
+        --ui-animation-easing: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ui-animate-ease-in-out {
+        --ui-animation-easing: cubic-bezier(0.45, 0, 0.55, 1);
     }
 }

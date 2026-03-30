@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import { animationClass } from '../lib/animations';
 
 /**
  * Full-screen overlay for mobile navigation. Backdrop is black with opacity;
@@ -36,7 +37,7 @@ export function MobileNavOverlay({ open, onClose, navItems }) {
 
     return (
         <div
-            className="fixed inset-0 z-200 md:hidden"
+            className={clsx('fixed inset-0 z-9999 md:hidden', animationClass('fadeIn'))}
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
@@ -49,7 +50,12 @@ export function MobileNavOverlay({ open, onClose, navItems }) {
                 aria-label="Close menu"
                 onClick={onClose}
             />
-            <div className="relative z-10 flex h-full min-h-0 flex-col pointer-events-none">
+            <div
+                className={clsx(
+                    'relative z-10 flex h-full min-h-0 flex-col pointer-events-none',
+                    animationClass('fadeInUp', 'fast')
+                )}
+            >
                 <div className="pointer-events-auto flex justify-end px-5 pt-14 pb-2">
                     <button
                         type="button"

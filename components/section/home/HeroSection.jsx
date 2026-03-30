@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { animationClass } from 'lib/animations';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,7 +11,7 @@ export default function HeroSection() {
             className="flex w-full min-h-[min(38vh,420px)] flex-col justify-center gap-8 py-14 pb-0! px-[30px] md:px-0"
             aria-label="Hero"
         >
-            <div className="flex w-full flex-col items-start gap-6">
+            <div className={clsx('flex w-full flex-col items-start gap-6', animationClass('fadeInUp', 'slow'))}>
                 <Image
                     src={secondaryLogo}
                     alt="ScaleBio Partners"

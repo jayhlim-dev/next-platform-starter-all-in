@@ -11,14 +11,14 @@ export default function DecisionSupportSection() {
             useHoverAnimation={false}
             className={clsx('px-0! flex flex-col gap-8 text-white', 'md:gap-6 md:p-10 py-8 md:rounded-2xl')}
         >
-            <div className={clsx('px-8 flex flex-col gap-2')}>
+            <div className="px-8 flex flex-col gap-2">
                 <h2 className="text-2xl font-bold">{title}</h2>
                 <p className={clsx('text-xs max-w-xs', 'md:max-w-2xl md:text-sm')}>{subTitle}</p>
             </div>
             <div
                 className={clsx(
                     'flex flex-row  overflow-x-auto no-scrollbar px-8 gap-6',
-                    'md:grid md:grid-cols-4 md:overflow-x-hidden '
+                    'md:grid md:grid-cols-4 md:overflow-x-hidden'
                 )}
             >
                 {supportSector.map((sector, index) => (
