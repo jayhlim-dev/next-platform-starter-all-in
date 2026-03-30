@@ -4,6 +4,9 @@ function getBgColor(type) {
     if (type === 'dark') {
         return 'bg-[#091642]/26';
     }
+    if (type === 'light-dark') {
+        return 'bg-[#091642]/10';
+    }
     return 'bg-white/2';
 }
 

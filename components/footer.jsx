@@ -18,15 +18,24 @@ const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
 export function Footer() {
     return (
-        <footer className="w-full px-[162px] flex flex-col gap-16 pb-16">
+        <footer className={clsx('w-full flex flex-col gap-16', 'md:px-[162px] md:pb-16')}>
             <Glass
+                type="light-dark"
                 useHoverAnimation={false}
-                className={clsx('z-50 flex w-full flex-col gap-5 rounded-3xl  backdrop-blur-[28px] px-12 py-10')}
+                className={clsx(
+                    'z-50 flex w-full flex-col gap-10 rounded-t-4xl backdrop-blur-[28px] px-8 py-10',
+                    'md:gap-5 md:px-12 md:rounded-3xl'
+                )}
             >
                 {/* Top row: brand | nav | CTA */}
-                <div className="flex flex-col gap-2 lg:flex-row items-center justify-between ">
+                <div className={clsx('flex flex-col gap-10 items-center justify-between', 'md:gap-2 md:flex-row')}>
                     <Link href="/" aria-label="ScaleBio Partners home" className="shrink-0">
-                        <Image src={mainLogo} alt="ScaleBio Partners" className="h-auto w-[252px] " priority />
+                        <Image
+                            src={mainLogo}
+                            alt="ScaleBio Partners"
+                            className={clsx('h-auto max-w-[324px]', 'md:w-[252px]')}
+                            priority
+                        />
                     </Link>
 
                     <nav className="flex flex-wrap items-center justify-center gap-8" aria-label="Footer">
@@ -52,7 +61,7 @@ export function Footer() {
                         </div>
                         <Link
                             href="/get-in-touch"
-                            className="inline-flex items-center justify-center rounded-[10px] border border-white bg-transparent px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[150px] min-h-[40px]"
+                            className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[150px] min-h-[40px] bg-black/10"
                         >
                             Let&apos;s Talk
                         </Link>
@@ -62,8 +71,13 @@ export function Footer() {
                 <div className="h-0.5 w-full bg-white/15" aria-hidden />
 
                 {/* Bottom row: tagline | copyright | contact */}
-                <div className="flex gap-8 text-sm text-white/90 justify-between items-center">
-                    <p className="m-0 max-w-[301px] ">
+                <div
+                    className={clsx(
+                        'flex flex-col text-sm text-white/90 justify-center items-center gap-8',
+                        'md:flex-row md:justify-between md:gap-0'
+                    )}
+                >
+                    <p className={clsx('m-0 max-w-[301px] text-center', 'md:text-left')}>
                         A biotech consulting firm transforming science to scalable ventures
                     </p>
                     <p className="m-0 text-center text-white/80 ">
@@ -81,7 +95,7 @@ export function Footer() {
                         </Link>
                         <a
                             href={`mailto:${FOOTER_EMAIL}`}
-                            className="text-sm text-white no-underline transition hover:opacity-85"
+                            className="text-sm text-white no-underline transition hover:opacity-85 font-bold"
                         >
                             {FOOTER_EMAIL}
                         </a>

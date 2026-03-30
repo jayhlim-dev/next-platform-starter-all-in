@@ -196,6 +196,15 @@
         animation-fill-mode: forwards;
     }
 
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
     .max-w-6xs {
         max-width: 10rem;
     }

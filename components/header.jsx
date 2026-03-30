@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import mainLogo from 'public/images/logo/main-scalebio-logo.png';
+import burgerMenuIcon from 'public/images/icon/burger.svg';
 import { Glass } from './glass';
 import clsx from 'clsx';
 
@@ -22,14 +23,20 @@ export function Header() {
             <Glass
                 className={clsx(
                     'z-50 mx-auto flex w-full items-center justify-between gap-6',
-                    'max-w-[85%] px-10 py-6 rounded-3xl'
+                    'max-w-[85%] px-5 py-4 rounded-full',
+                    'md:px-10 md:rounded-3xl md:py-6'
                 )}
             >
                 <Link href="/" aria-label="ScaleBio Partners home">
-                    <Image src={mainLogo} alt="ScaleBio Partners" className="h-auto w-[190px]" priority />
+                    <Image
+                        src={mainLogo}
+                        alt="ScaleBio Partners"
+                        className={clsx('h-auto', 'w-[133px]', 'md:w-[190px]')}
+                        priority
+                    />
                 </Link>
 
-                <div className="flex items-center gap-8">
+                <div className="items-center gap-8 hidden md:flex">
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
@@ -49,6 +56,10 @@ export function Header() {
                             />
                         </Link>
                     ))}
+                </div>
+
+                <div className="md:hidden">
+                    <Image src={burgerMenuIcon} alt="Menu" className="h-auto w-[23px]" priority />
                 </div>
             </Glass>
         </header>
