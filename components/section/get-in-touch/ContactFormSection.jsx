@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 const fieldShellClass = 'flex flex-col gap-1.5';
 const inputClass =
-    'w-full rounded-lg border border-transparent bg-white/5 px-3 py-2 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/40';
+    'w-fulll border border-transparent bg-white/5 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/40';
 
 /** Demo-only: fictional person; example.com is reserved — safe for testing. */
 const DEMO_SAMPLE = {
@@ -17,7 +17,7 @@ const DEMO_SAMPLE = {
     work_email: 'sarah.chen@example.com',
     area_of_interest: 'Series A narrative, CMC milestones, and pre-IND positioning',
     project_overview:
-        'We are a preclinical-stage company developing engineered NK cell therapies for solid tumors. We closed our seed round in Q3 and are preparing for Series A discussions over the next two quarters. We are looking for help refining our investor story, sequencing CMC work against our clinical plan, and getting ready for early FDA engagement.',
+        'We are a preclinical-stage company developing engineered NK cell therapies for solid tumors. We closed our seed round in Q3 and are preparing for Series A discussions over the next two quarters. We are looking for help refining our investor story, sequencing CMC work against our clinical plan, and getting ready for early FDA engagement.'
 };
 
 export default function ContactFormSection() {
@@ -75,25 +75,40 @@ export default function ContactFormSection() {
 
     return (
         <div className="flex items-center justify-center gap-16 text-white">
-            <Glass className="flex w-full max-w-none flex-col gap-7 rounded-2xl px-18 py-13" type="dark">
-                <h2 className="text-4xl font-bold">{title}</h2>
+            <Glass
+                className={clsx(
+                    'flex w-full max-w-none flex-col gap-5 px-8 py-7',
+                    'rounded-none',
+                    'lg:rounded-2xl lg:px-18 lg:py-13 lg:gap-7'
+                )}
+                type="dark"
+            >
+                <h2 className={clsx('text-2xl font-bold', 'lg:text-4xl')}>{title}</h2>
                 <div className="h-[2px] w-full bg-white/20" />
 
                 {/* // below is the form */}
                 <form
                     ref={formRef}
-                    className="grid w-full grid-cols-2 gap-5"
+                    className={clsx('w-full gap-5', 'flex flex-col gap-5', 'lg:grid lg:grid-cols-2 lg:gap-5')}
                     onSubmit={handleSubmit}
                 >
-                    <div className="col-span-1 flex flex-col gap-x-4 gap-y-4">
+                    <div className={clsx('flex flex-col gap-x-4 gap-y-4', 'lg:col-span-1 lg:gap-x-4 lg:gap-y-4')}>
                         {rowFields.map((field) => (
                             <div key={field.name} className={fieldShellClass}>
-                                <label className="text-sm font-bold gap-0" htmlFor={field.name}>
+                                <label
+                                    className={clsx('text-sm font-semibold', 'lg:font-bold lg:gap-0')}
+                                    htmlFor={field.name}
+                                >
                                     {field.required ? <span>*</span> : null}
                                     {field.label}
                                 </label>
                                 <input
-                                    className={clsx(inputClass, 'bg-white/10 ')}
+                                    className={clsx(
+                                        inputClass,
+                                        'bg-white/10 ',
+                                        'px-4 py-2 rounded-lg',
+                                        'lg:px-3 lg:py-2 lg:rounded-lg'
+                                    )}
                                     type={field.name === 'work_email' ? 'email' : 'text'}
                                     id={field.name}
                                     name={field.name}
@@ -106,12 +121,18 @@ export default function ContactFormSection() {
 
                     {overviewField ? (
                         <div className="col-span-1 flex h-full flex-col gap-1.5">
-                            <label className="text-sm font-medium" htmlFor={overviewField.name}>
+                            <label
+                                className={clsx('text-sm font-semibold', 'lg:font-medium')}
+                                htmlFor={overviewField.name}
+                            >
                                 {overviewField.required ? <span>*</span> : null}
                                 {overviewField.label}
                             </label>
                             <textarea
-                                className={`${inputClass} h-full min-h-[120px] resize-none`}
+                                className={clsx(
+                                    `${inputClass} h-full min-h-[120px] resize-none`,
+                                    'px-4 py-2 rounded-lg'
+                                )}
                                 id={overviewField.name}
                                 name={overviewField.name}
                                 placeholder={overviewField.placeholder}
@@ -142,7 +163,12 @@ export default function ContactFormSection() {
                         ) : null}
                     </div>
 
-                    <div className="col-span-2 flex items-center gap-4">
+                    <div
+                        className={clsx(
+                            'flex justify-center flex-col w-full items-center gap-4',
+                            'lg:col-span-2 lg:justify-end lg:gap-4 lg:flex-row lg:w-fit'
+                        )}
+                    >
                         <button
                             className="flex h-full min-w-[184px] w-fit items-center justify-center rounded-lg bg-white px-6 py-2 text-center text-base! font-bold uppercase text-[#1B4887] disabled:opacity-60"
                             type="submit"

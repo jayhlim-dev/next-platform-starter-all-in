@@ -50,18 +50,28 @@ export function Footer() {
                         ))}
                     </nav>
 
-                    <div className="flex gap-4 min-w-[352px] items-center">
-                        <div className="flex flex-col mr-2">
-                            <p className=" text-base font-bold leading-snug text-white whitespace-nowrap">
-                                Ready to move your
+                    <div
+                        className={clsx(
+                            'flex gap-0 min-w-[352px] items-center justify-center',
+                            'lg:gap-4 lg:justify-start lg:items-center'
+                        )}
+                    >
+                        <div className={clsx('flex flex-col mr-2 max-w-[160px]', 'lg:max-w-none')}>
+                            <p className={clsx('text-base font-bold text-white whitespace-nowrap', 'lg:leading-snug')}>
+                                Ready to turn your
                             </p>
-                            <p className=" text-base font-bold leading-snug text-white whitespace-nowrap">
-                                innovation forward?
+                            <p
+                                className={clsx(
+                                    'text-base font-bold text-white',
+                                    'lg:whitespace-nowrap lg:max-w-none lg:leading-snug'
+                                )}
+                            >
+                                breakthrough into business
                             </p>
                         </div>
                         <Link
                             href="/get-in-touch"
-                            className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[150px] min-h-[40px] bg-black/10"
+                            className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[180px] min-h-[40px] bg-black/10"
                         >
                             Let&apos;s Talk
                         </Link>

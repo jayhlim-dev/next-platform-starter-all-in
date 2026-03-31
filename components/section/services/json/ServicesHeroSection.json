@@ -8,23 +8,23 @@
             "process_steps": [
                 {
                     "title": "Initial contact",
-                    "description": "An initial discussion to understand your goals, challenges, and areas of focus."
+                    "description": "An introductory discussion to understand your company’s vision, scientific focus, stage, and strategic priorities."
                 },
                 {
                     "title": "Company evaluation",
-                    "description": "A detailed evaluation of the company's technology, market, and team."
+                    "description": "A structured assessment of your technology, business positioning, and market opportunity to identify where support can create the most value."
                 },
                 {
                     "title": "Discussion of focus points",
-                    "description": "A detailed discussion of the focus points and the areas of focus."
+                    "description": "A focused conversation to define the key priorities of the engagement, from product development and partnerships to fundraising and commercialization."
                 },
                 {
                     "title": "What we can offer",
-                    "description": "A detailed discussion of the what we can offer and the value we can bring to the table."
+                    "description": "A proposal for a tailored consultation outlining the most relevant areas of support, expected deliverables, and strategic outcomes."
                 },
                 {
                     "title": "Contract agreement",
-                    "description": "A contract agreement to formalize the collaboration and define the scope of work."
+                    "description": "A clear agreement is established to align on scope, timelines, responsibilities, and next steps."
                 }
             ]
         },

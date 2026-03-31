@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import ServicesHeroSection from './json/ServicesHeroSection.json';
 import clsx from 'clsx';
 
