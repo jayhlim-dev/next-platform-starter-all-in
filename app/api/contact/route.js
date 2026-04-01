@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 
 import { buildContactEmailHtml, buildContactEmailText } from '../../../lib/contact-email-template.js';
 import { SITE_MAILBOX } from '../../../lib/site-mailbox.js';
+import { SMTP_HOST } from '../../../lib/smtp-host.js';
 
 const BRAND_NAME = 'ScaleBio Partners';
 
@@ -10,7 +11,7 @@ const REQUIRED = ['name', 'work_email', 'company_organization', 'project_overvie
 
 function getTransporter() {
     const pass = process.env.SMTP_APP_PASSWORD || process.env.SMTP_PASSWORD;
-    const host = process.env.SMTP_HOST?.trim() || 'smtp.hostinger.com';
+    /** Default 587 (STARTTLS). Use 465 + SSL only if you change code / Hostinger docs. */
     const port = parseInt(process.env.SMTP_PORT || '587', 10);
     const secure = Number.isFinite(port) && port === 465;
 
@@ -19,7 +20,7 @@ function getTransporter() {
     }
 
     return nodemailer.createTransport({
-        host,
+        host: SMTP_HOST,
         port: Number.isFinite(port) ? port : 587,
         secure,
         auth: { user: SITE_MAILBOX, pass },
@@ -61,8 +62,8 @@ export async function POST(request) {
         const text = buildContactEmailText(data, BRAND_NAME);
 
         await transporter.sendMail({
-            from,
-            to,
+            from: SITE_MAILBOX,
+            to: SITE_MAILBOX,
             replyTo: data.work_email,
             subject: subjectLine,
             text,
