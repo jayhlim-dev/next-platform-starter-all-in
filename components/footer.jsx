@@ -18,22 +18,22 @@ const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
 export function Footer() {
     return (
-        <footer className={clsx('w-full flex flex-col gap-16', 'md:px-[162px] md:pb-16 z-0')}>
+        <footer className={clsx('w-full flex flex-col gap-16', 'lg:px-[162px] lg:pb-16 z-0')}>
             <Glass
                 type="light-dark"
                 useHoverAnimation={false}
                 className={clsx(
                     'z-50 flex w-full flex-col gap-10 rounded-t-4xl backdrop-blur-[28px] px-8 py-10',
-                    'md:gap-5 md:px-12 md:rounded-3xl'
+                    'lg:gap-5 lg:px-12 lg:rounded-3xl'
                 )}
             >
                 {/* Top row: brand | nav | CTA */}
-                <div className={clsx('flex flex-col gap-10 items-center justify-between', 'md:gap-2 md:flex-row')}>
+                <div className={clsx('flex flex-col gap-10 items-center justify-between', 'lg:gap-2 lg:flex-row')}>
                     <Link href="/" aria-label="ScaleBio Partners home" className="shrink-0">
                         <Image
                             src={mainLogo}
                             alt="ScaleBio Partners"
-                            className={clsx('h-auto max-w-[324px]', 'md:w-[252px]')}
+                            className={clsx('h-auto max-w-[324px]', 'lg:w-[252px]')}
                             priority
                         />
                     </Link>
@@ -84,10 +84,10 @@ export function Footer() {
                 <div
                     className={clsx(
                         'flex flex-col text-sm text-white/90 justify-center items-center gap-8',
-                        'md:flex-row md:justify-between md:gap-0'
+                        'lg:flex-row lg:justify-between lg:gap-0'
                     )}
                 >
-                    <p className={clsx('m-0 max-w-[301px] text-center', 'md:text-left')}>
+                    <p className={clsx('m-0 max-w-[301px] text-center', 'lg:text-left')}>
                         A biotech consulting firm transforming science to scalable ventures
                     </p>
                     <p className="m-0 text-center text-white/80 ">

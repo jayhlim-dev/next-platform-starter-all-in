@@ -18,7 +18,10 @@ const revealedSections = [
 export default function Page() {
     return (
         <div
-            className={clsx('min-h-screen w-full py-16 flex flex-col gap-16 ', 'md:px-[162px] md:py-16')}
+            className={clsx(
+                'min-h-screen w-full flex flex-col gap-16 py-16',
+                'lg:px-[10%]'
+            )}
             aria-label="Home"
         >
             <HeroSection />
