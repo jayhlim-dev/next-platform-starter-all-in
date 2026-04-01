@@ -13,7 +13,10 @@ const navItems = [
     { linkText: 'Get In Touch', href: '/get-in-touch' }
 ];
 
-const FOOTER_EMAIL = 'info@scalebiopartners.com';
+/** Public inbox shown in the UI. Use a different mailbox for `SMTP_USER` so Netlify secret scans don’t match this string. */
+const contactEmail =
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'info@scalebiopartners.com';
+
 const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
 export function Footer() {
@@ -104,10 +107,10 @@ export function Footer() {
                             <Image src={linkedinIcon} alt="" width={22} height={22} className="opacity-95" />
                         </Link>
                         <a
-                            href={`mailto:${FOOTER_EMAIL}`}
+                            href={`mailto:${contactEmail}`}
                             className="text-sm text-white no-underline transition hover:opacity-85 font-bold"
                         >
-                            {FOOTER_EMAIL}
+                            {contactEmail}
                         </a>
                     </div>
                 </div>
