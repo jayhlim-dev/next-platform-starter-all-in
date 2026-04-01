@@ -2,28 +2,27 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 import { buildContactEmailHtml, buildContactEmailText } from '../../../lib/contact-email-template.js';
+import { SITE_MAILBOX } from '../../../lib/site-mailbox.js';
+
+const BRAND_NAME = 'ScaleBio Partners';
 
 const REQUIRED = ['name', 'work_email', 'company_organization', 'project_overview'];
 
 function getTransporter() {
-    const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_APP_PASSWORD || process.env.SMTP_PASSWORD;
     const host = process.env.SMTP_HOST?.trim() || 'smtp.hostinger.com';
     const port = parseInt(process.env.SMTP_PORT || '587', 10);
-    // 465 = implicit TLS (SSL); 587 = STARTTLS (nodemailer: secure false)
     const secure = Number.isFinite(port) && port === 465;
 
-    if (!user || !pass) {
-        throw new Error(
-            'Missing SMTP_USER and SMTP_APP_PASSWORD (or SMTP_PASSWORD) in environment'
-        );
+    if (!pass) {
+        throw new Error('Missing SMTP_PASSWORD (or SMTP_APP_PASSWORD) in environment');
     }
 
     return nodemailer.createTransport({
         host,
         port: Number.isFinite(port) ? port : 587,
         secure,
-        auth: { user, pass },
+        auth: { user: SITE_MAILBOX, pass },
     });
 }
 
@@ -55,23 +54,11 @@ export async function POST(request) {
             }
         }
 
-        const to = process.env.CONTACT_EMAIL?.trim() || process.env.CONTACT_EMAIL_TO?.trim();
-        if (!to) {
-            return NextResponse.json(
-                { error: 'Set CONTACT_EMAIL (or CONTACT_EMAIL_TO) in environment' },
-                { status: 503 }
-            );
-        }
-
         const transporter = getTransporter();
-        const from = process.env.SMTP_FROM?.trim() || process.env.SMTP_USER;
-        const brandName = process.env.EMAIL_BRAND_NAME?.trim() || 'ScaleBio Partners';
-        const subjectLine =
-            process.env.CONTACT_EMAIL_SUBJECT?.trim() ||
-            `${brandName} — New inquiry from ${data.name} (${data.company_organization})`;
+        const subjectLine = `${BRAND_NAME} — New inquiry from ${data.name} (${data.company_organization})`;
 
-        const html = buildContactEmailHtml(data, brandName);
-        const text = buildContactEmailText(data, brandName);
+        const html = buildContactEmailHtml(data, BRAND_NAME);
+        const text = buildContactEmailText(data, BRAND_NAME);
 
         await transporter.sendMail({
             from,
@@ -86,7 +73,7 @@ export async function POST(request) {
     } catch (err) {
         console.error('Contact API error:', err);
         const msg = err.message || 'Failed to send message';
-        const status = msg.includes('Missing SMTP') || msg.includes('CONTACT_EMAIL') ? 503 : 500;
+        const status = msg.includes('Missing SMTP') ? 503 : 500;
         return NextResponse.json({ error: msg }, { status });
     }
 }

@@ -6,16 +6,13 @@ import mainLogo from 'public/images/logo/main-scalebio-logo.png';
 import linkedinIcon from 'public/images/icon/linkedin.svg';
 import { Glass } from './glass';
 import clsx from 'clsx';
+import { SITE_MAILBOX } from 'lib/site-mailbox';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Services', href: '/services' },
     { linkText: 'Get In Touch', href: '/get-in-touch' }
 ];
-
-/** Public inbox shown in the UI. Use a different mailbox for `SMTP_USER` so Netlify secret scans don’t match this string. */
-const contactEmail =
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'info@scalebiopartners.com';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
@@ -107,10 +104,10 @@ export function Footer() {
                             <Image src={linkedinIcon} alt="" width={22} height={22} className="opacity-95" />
                         </Link>
                         <a
-                            href={`mailto:${contactEmail}`}
+                            href={`mailto:${SITE_MAILBOX}`}
                             className="text-sm text-white no-underline transition hover:opacity-85 font-bold"
                         >
-                            {contactEmail}
+                            {SITE_MAILBOX}
                         </a>
                     </div>
                 </div>
