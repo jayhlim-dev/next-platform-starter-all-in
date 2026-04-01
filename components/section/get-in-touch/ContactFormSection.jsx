@@ -5,6 +5,9 @@ import { Glass } from 'components/glass';
 import getInTouchData from './json/getInTouchData.json';
 import clsx from 'clsx';
 
+/** Client components only see `NEXT_PUBLIC_*` env vars at build time. */
+const isAdminDemo = process.env.NEXT_PUBLIC_IS_ADMIN === '1';
+
 const fieldShellClass = 'flex flex-col gap-1.5';
 const inputClass =
     'w-fulll border border-transparent bg-white/5 text-sm text-white placeholder:text-white/40 outline-none focus:border-white/40';
@@ -142,26 +145,28 @@ export default function ContactFormSection() {
                         </div>
                     ) : null}
 
-                    <div className="col-span-2 flex flex-col gap-3">
-                        <label className="flex cursor-pointer items-center gap-2 text-xs text-white/55">
-                            <input
-                                type="checkbox"
-                                className="size-3.5 rounded border-white/30 bg-white/10 accent-white"
-                                checked={demoFillEnabled}
-                                onChange={(e) => setDemoFillEnabled(e.target.checked)}
-                            />
-                            <span>Show demo autofill (fills the form with sample data)</span>
-                        </label>
-                        {demoFillEnabled ? (
-                            <button
-                                className="w-fit rounded-lg border border-dashed border-white/35 bg-white/5 px-4 py-2 text-left text-xs font-medium text-white/80 transition hover:border-white/50 hover:bg-white/10"
-                                type="button"
-                                onClick={fillDemoSample}
-                            >
-                                Fill with sample submission
-                            </button>
-                        ) : null}
-                    </div>
+                    {isAdminDemo && (
+                        <div className="col-span-2 flex flex-col gap-3">
+                            <label className="flex cursor-pointer items-center gap-2 text-xs text-white/55">
+                                <input
+                                    type="checkbox"
+                                    className="size-3.5 rounded border-white/30 bg-white/10 accent-white"
+                                    checked={demoFillEnabled}
+                                    onChange={(e) => setDemoFillEnabled(e.target.checked)}
+                                />
+                                <span>Show demo autofill (fills the form with sample data)</span>
+                            </label>
+                            {demoFillEnabled ? (
+                                <button
+                                    className="w-fit rounded-lg border border-dashed border-white/35 bg-white/5 px-4 py-2 text-left text-xs font-medium text-white/80 transition hover:border-white/50 hover:bg-white/10"
+                                    type="button"
+                                    onClick={fillDemoSample}
+                                >
+                                    Fill with sample submission
+                                </button>
+                            ) : null}
+                        </div>
+                    )}
 
                     <div
                         className={clsx(
