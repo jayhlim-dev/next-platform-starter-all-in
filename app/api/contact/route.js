@@ -7,12 +7,22 @@ const REQUIRED = ['name', 'work_email', 'company_organization', 'project_overvie
 
 function getTransporter() {
     const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_APP_PASSWORD;
+    const pass = process.env.SMTP_APP_PASSWORD || process.env.SMTP_PASSWORD;
+    const host = process.env.SMTP_HOST?.trim() || 'smtp.hostinger.com';
+    const port = parseInt(process.env.SMTP_PORT || '587', 10);
+    // 465 = implicit TLS (SSL); 587 = STARTTLS (nodemailer: secure false)
+    const secure = Number.isFinite(port) && port === 465;
+
     if (!user || !pass) {
-        throw new Error('Missing SMTP_USER or SMTP_APP_PASSWORD in environment');
+        throw new Error(
+            'Missing SMTP_USER and SMTP_APP_PASSWORD (or SMTP_PASSWORD) in environment'
+        );
     }
+
     return nodemailer.createTransport({
-        service: 'gmail',
+        host,
+        port: Number.isFinite(port) ? port : 587,
+        secure,
         auth: { user, pass },
     });
 }
