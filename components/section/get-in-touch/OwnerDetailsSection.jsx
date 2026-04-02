@@ -14,7 +14,7 @@ export default function OwnerDetailsSection() {
             className={clsx(
                 'flex  text-white justify-center items-center ',
                 'flex-col px-[30px] gap-9',
-                'lg:flex-row lg:px-0 lg:gap-16 lg:py-13'
+                'lg:flex-row lg:px-0 lg:gap-16 lg:py-13 lg:pt-30'
             )}
         >
             <div className={clsx('flex flex-col gap-2 max-w-[340px]', 'lg:max-w-none')}>
@@ -38,7 +38,7 @@ export default function OwnerDetailsSection() {
                 <div className="h-0.5 bg-white/20 w-full max-w-[50%]" />
 
                 <p
-                    className={clsx('text-[10px] max-w-2xl', 'lg:text-sm')}
+                    className={clsx('text-[10px] max-w-2xl', 'lg:text-sm!')}
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
 

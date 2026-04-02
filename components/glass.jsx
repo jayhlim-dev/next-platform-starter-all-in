@@ -1,12 +1,17 @@
 import clsx from 'clsx';
 
-function getBgColor(type) {
+function getBgColor(type, bgColorClass = '') {
+    if (bgColorClass !== '') {
+        return bgColorClass;
+    }
+
     if (type === 'dark') {
         return 'bg-[#091642]/26';
     }
     if (type === 'light-dark') {
         return 'bg-[#091642]/10';
     }
+
     return 'bg-white/2';
 }
 
@@ -32,9 +37,10 @@ export function Glass({
     onPointerDown,
     onPointerUp,
     onPointerCancel,
-    onContextMenu
+    onContextMenu,
+    bgColorClass = ''
 }) {
-    const bgColor = getBgColor(type);
+    const bgColor = getBgColor(type, bgColorClass || '');
 
     return (
         <div

@@ -1,6 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Glass } from 'components/glass';
 import getInTouchData from './json/getInTouchData.json';
 import clsx from 'clsx';
@@ -34,6 +35,12 @@ export default function ContactFormSection() {
     const [message, setMessage] = useState('');
     const [demoFillEnabled, setDemoFillEnabled] = useState(false);
     const formRef = useRef(null);
+
+    const searchParams = useSearchParams();
+    /** Same keys as `?a=1&b=2` — use `searchParams.get('key')` if you need the first value only. */
+    const query = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
+    const { showButtonTest = 'false' } = query || {};
+    const isShowButtonTest = useMemo(() => showButtonTest === 'true', [showButtonTest]) || false;
 
     function fillDemoSample() {
         const form = formRef.current;
@@ -84,6 +91,7 @@ export default function ContactFormSection() {
                     'rounded-none',
                     'lg:rounded-2xl lg:px-18 lg:py-13 lg:gap-7'
                 )}
+                bgColorClass="bg-[#1F5E8F]!"
                 type="dark"
             >
                 <h2 className={clsx('text-2xl font-bold', 'lg:text-4xl')}>{title}</h2>
@@ -145,7 +153,7 @@ export default function ContactFormSection() {
                         </div>
                     ) : null}
 
-                    {isAdminDemo && (
+                    {isShowButtonTest && (
                         <div className="col-span-2 flex flex-col gap-3">
                             <label className="flex cursor-pointer items-center gap-2 text-xs text-white/55">
                                 <input
@@ -170,12 +178,15 @@ export default function ContactFormSection() {
 
                     <div
                         className={clsx(
-                            'flex justify-center flex-col w-full items-center gap-4',
+                            'flex justify-center flex-col w-full items-center gap-4 mt-2',
                             'lg:col-span-2 lg:justify-end lg:gap-4 lg:flex-row lg:w-fit'
                         )}
                     >
                         <button
-                            className="flex h-full min-w-[184px] w-fit items-center justify-center rounded-lg bg-white px-6 py-2 text-center text-base! font-bold uppercase text-[#1B4887] disabled:opacity-60"
+                            className={clsx(
+                                'flex h-full min-w-[184px] w-fit items-center justify-center rounded-lg bg-white px-6 py-2 text-center text-base! font-bold uppercase text-[#1B4887] disabled:opacity-60',
+                                'lg:min-w-[175px]'
+                            )}
                             type="submit"
                             disabled={status === 'sending'}
                         >
