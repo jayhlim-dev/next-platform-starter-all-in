@@ -123,7 +123,7 @@ export default function ProcessWorkflowSection() {
     };
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
-    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-4xl' : 'lg:text-5xl';
+    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl' : 'lg:text-5xl';
     return (
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
@@ -155,7 +155,13 @@ export default function ProcessWorkflowSection() {
                         </p>
 
                         <div className="flex flex-col gap-4">
-                            <h3 className={clsx('text-4xl text-[54px] font-medium capitalize', textSizeClass)}>
+                            <h3
+                                className={clsx(
+                                    'flex min-h-[96px] flex-col justify-end text-[34px] font-medium capitalize',
+                                    textSizeClass,
+                                    'lg:block lg:min-h-0 lg:text-4xl lg:text-[54px] lg:justify-start'
+                                )}
+                            >
                                 {workflow_process.process_steps[activeStep].title}
                             </h3>
                             <div className="h-px w-[10%] bg-[#D9D9D9]" />

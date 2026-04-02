@@ -17,20 +17,21 @@ export default function DecisionSupportSection() {
             </div>
             <div
                 className={clsx(
-                    'flex flex-row  overflow-x-auto no-scrollbar px-8 gap-6',
-                    'lg:grid lg:grid-cols-4 lg:overflow-x-hidden'
+                    'flex flex-row overflow-x-auto no-scrollbar px-8 gap-6',
+                    // lg: avoid overflow-x-hidden — it makes overflow-y clip hover transforms (CSS).
+                    'lg:grid lg:grid-cols-4 lg:overflow-visible lg:py-1'
                 )}
             >
                 {supportSector.map((sector, index) => (
                     <Glass
                         key={sector.title}
-                        type="light"
+                        type="extra-light"
                         className={clsx(
                             'py-6 px-7 rounded-3xl items-center justify-between flex flex-col gap-2 min-w-[235px]! h-[350px]',
-                            'lg:min-w-0 lg:h-100! lg:rounded-2xl lg:px-6'
+                            'lg:min-w-0 lg:h-100! lg:rounded-2xl lg:px-6 '
                         )}
                         useHoverAnimation={true}
-                        useBorderOnHoverOnly={true}
+                        // useBorderOnHoverOnly={true}
                     >
                         <h3 className={clsx('text-base font-bold ', 'lg:text-2xl lg:leading-9')}>{sector.title}</h3>
                         <div className="flex gap-3 flex-col">

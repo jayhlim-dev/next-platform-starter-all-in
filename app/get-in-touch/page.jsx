@@ -21,7 +21,7 @@ export default function Page() {
             className={clsx('min-h-screen w-full py-16 flex flex-col gap-4 ', 'lg:px-[162px]')}
             aria-label="Get In Touch"
         >
-            <div className="absolute top-0 left-0 w-full -z-2">
+            <div className="absolute top-0 left-0 w-full -z-2 hidden lg:block">
                 <Image
                     src="/images/desktop/3-a.png"
                     alt="Noise"
@@ -31,7 +31,16 @@ export default function Page() {
                     className="w-full h-full object-cover"
                 />
             </div>
-
+            <div className="absolute top-0 left-0 w-full -z-2 block lg:hidden">
+                <Image
+                    src="/images/mobile/3-h.png"
+                    alt="Noise"
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="w-full h-full object-cover"
+                />
+            </div>
             {sections.map(({ id, Component, inViewClassName }, index) => (
                 <InView
                     key={id}
@@ -46,7 +55,7 @@ export default function Page() {
                 </InView>
             ))}
 
-            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3">
+            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 hidden lg:block">
                 <Image
                     src="/images/desktop/3-b.png"
                     alt=""
@@ -55,6 +64,16 @@ export default function Page() {
                     priority
                     className="h-full w-full object-cover "
                     // className="h-full w-full object-cover motion-reduce:animate-none animate-home-bottom-bg-drift"
+                />
+            </div>
+            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden">
+                <Image
+                    src="/images/mobile/3-a.png"
+                    alt=""
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="h-full w-full object-cover"
                 />
             </div>
         </div>

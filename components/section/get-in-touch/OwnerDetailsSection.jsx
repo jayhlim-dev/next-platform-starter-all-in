@@ -13,19 +13,19 @@ export default function OwnerDetailsSection() {
         <div
             className={clsx(
                 'flex  text-white justify-center items-center ',
-                'flex-col px-[30px] gap-9',
-                'lg:flex-row lg:px-0 lg:gap-16 lg:py-13 lg:pt-30'
+                'flex-col px-[30px] gap-9 py-13 pt-0',
+                'lg:flex-row lg:px-0 lg:gap-16 lg:pt-30'
             )}
         >
-            <div className={clsx('flex flex-col gap-2 max-w-[340px]', 'lg:max-w-none')}>
+            <div className={clsx('flex flex-col gap-2 max-w-[335px]', 'lg:max-w-none')}>
                 <Image src="/images/content/owner.png" alt="Owner Details" width={460} height={460} />
             </div>
 
             <Glass
                 className={clsx(
-                    'flex flex-col gap-5  max-w-[580px] rounded-2xl border-white/20 border',
+                    'flex flex-col gap-3 max-w-[580px] rounded-2xl border-white/20 border',
                     'px-5 py-5',
-                    'lg:px-14 lg:py-10'
+                    'lg:px-14 lg:py-10 lg:gap-5 '
                 )}
                 type="light"
             >
@@ -42,7 +42,7 @@ export default function OwnerDetailsSection() {
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
 
-                <div className="h-0.5 bg-white/20 w-full max-w-[50%]" />
+                <div className="h-0.5 bg-white/20 w-full max-w-[25%] lg:max-w-[50%]" />
 
                 <div className="flex flex-row gap-2">
                     <Link href={social_media.linkedin}>

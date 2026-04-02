@@ -9,8 +9,8 @@ export default function HeroSection() {
     return (
         <section
             className={clsx(
-                'flex w-full min-h-[min(38vh,420px)] flex-col justify-center gap-4 py-14 pb-0! px-[30px]',
-                'lg:px-0 lg:flex-row'
+                'flex w-full min-h-[min(38vh,420px)] flex-col justify-end gap-4 py-14 pb-10 px-[30px]',
+                'lg:px-0 lg:flex-row lg:justify-center lg:py-14!'
             )}
             aria-label="Hero"
         >
@@ -42,7 +42,7 @@ export default function HeroSection() {
                     Let&apos;s talk
                 </Link>
             </div>
-            <div className="w-fit max-w-full min-w-[370px]">
+            <div className="w-fit max-w-full min-w-[370px] hidden lg:block">
                 <Image
                     src="/images/desktop/1-H.png"
                     alt="Noise"

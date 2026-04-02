@@ -12,14 +12,14 @@ export default function BoardSection() {
                 <p className={clsx('text-xs max-w-xs', 'lg:max-w-2xl lg:text-sm')}>{subTitle}</p>
             </div>
 
-            <div className={clsx('grid grid-cols-3 gap-[10px]', 'lg:gap-6')}>
+            <div className={clsx('grid grid-cols-3 gap-[18px]', 'lg:gap-6')}>
                 {boardSector.map((sector) => (
                     <Glass
                         key={sector.title}
                         type="light"
                         className={clsx(
-                            'py-5 px-3 flex rounded-xl items-center justify-between border-white/10! gap-4! flex-col',
-                            'lg:rounded-2xl lg:flex-row lg:px-5 lg:border-white/20!'
+                            'py-5 px-3 flex rounded-2xl items-center justify-between border-white/10! gap-4! flex-col',
+                            'lg:flex-row lg:px-5 lg:border-white/20!'
                         )}
                     >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}
@@ -30,7 +30,7 @@ export default function BoardSection() {
                                 'w-full max-w-56 text-xs text-center min-h-[45px]',
                                 'lg:text-base lg:font-semibold lg:text-left lg:min-h-0',
                                 sector.title.toLocaleLowerCase().includes('cosmeceuticals') ? 'text-[11px] ' : '',
-                                sector.title.toLocaleLowerCase().includes('biomanufacturing') ? 'text-[10px] ' : ''
+                                sector.title.toLocaleLowerCase().includes('biomanufacturing') ? 'text-[9px] ' : ''
                             )}
                         >
                             {sector.title}

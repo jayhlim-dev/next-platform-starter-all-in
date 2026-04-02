@@ -17,8 +17,21 @@ const sections = [
 
 export default function Page() {
     return (
-        <div className={clsx('min-h-screen w-full py-16 flex flex-col gap-16 re', 'lg:px-[162px] lg:pb-12')} aria-label="Services">
-            <div className="absolute top-0 left-0 w-full -z-3"></div>
+        <div
+            className={clsx('min-h-screen w-full py-16 flex flex-col gap-20', 'lg:px-[162px] lg:pb-12')}
+            aria-label="Services"
+        >
+            <div className="absolute top-0 left-0 w-full -z-2 block lg:hidden">
+                <Image
+                    src="/images/mobile/2-h.png"
+                    alt="Noise"
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="w-full h-full object-cover"
+                />
+            </div>
+
             {sections.map(({ id, Component, inViewClassName }, index) => (
                 <InView
                     key={id}
@@ -33,7 +46,7 @@ export default function Page() {
                 </InView>
             ))}
 
-            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3">
+            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 hidden lg:block">
                 <Image
                     src="/images/desktop/2-a.png"
                     alt=""
@@ -42,6 +55,16 @@ export default function Page() {
                     priority
                     className="h-full w-full object-cover "
                     // className="h-full w-full object-cover motion-reduce:animate-none animate-home-bottom-bg-drift"
+                />
+            </div>
+            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden">
+                <Image
+                    src="/images/mobile/2-a.png"
+                    alt=""
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="h-full w-full object-cover"
                 />
             </div>
         </div>

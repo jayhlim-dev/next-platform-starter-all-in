@@ -16,7 +16,7 @@ export default function HeroSection() {
                     {subTitle}
                 </p>
             </div>
-            <div className="absolute top-2 right-5 w-fit max-w-full min-w-[420px]">
+            <div className="absolute top-2 right-5 w-fit max-w-full min-w-[420px] hidden lg:block">
                 <Image
                     src="/images/desktop/2-h.png"
                     alt="Noise"

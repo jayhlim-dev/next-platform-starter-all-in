@@ -8,7 +8,7 @@ export default function HeroSection() {
     return (
         <div
             className={clsx(
-                'flex flex-col gap-4 h-90 pt-26 px-[30px]',
+                'flex flex-col gap-4 h-75 pt-26 px-[30px]',
                 'lg:px-0 lg:pt-20 lg:flex-row lg:gap-16 lg:items-center lg:h-70'
             )}
         >
@@ -19,7 +19,7 @@ export default function HeroSection() {
                 )}
                 dangerouslySetInnerHTML={{ __html: title }}
             />
-            <div className="w-fit max-w-full min-w-[398px]">
+            <div className="w-fit max-w-full min-w-[398px] hidden lg:block">
                 <Image
                     src="/images/desktop/3-h.png"
                     alt="Noise"

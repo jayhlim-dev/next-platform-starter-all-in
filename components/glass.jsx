@@ -11,6 +11,12 @@ function getBgColor(type, bgColorClass = '') {
     if (type === 'light-dark') {
         return 'bg-[#091642]/10';
     }
+    if (type === 'light') {
+        return 'bg-white/2';
+    }
+    if (type === 'extra-light') {
+        return 'bg-white/0.1';
+    }
 
     return 'bg-white/2';
 }
@@ -21,6 +27,12 @@ function getHoverClasses(type) {
     }
     if (type === 'light-dark') {
         return 'hover:border-white/25 hover:bg-[#091642]/10 ';
+    }
+    if (type === 'light') {
+        return 'hover:border-white/25 hover:bg-white/[0.08] ';
+    }
+    if (type === 'extra-light') {
+        return 'hover:border-white/25 hover:bg-white/1 ';
     }
     return 'hover:border-white/25 hover:bg-white/[0.08] ';
 }
