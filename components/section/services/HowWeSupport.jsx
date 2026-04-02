@@ -8,7 +8,7 @@ export default function HowWeSupportSection() {
     const { how_we_work } = content;
     const { title, description, work_steps } = how_we_work;
     return (
-        <div className={clsx('flex flex-col gap-6 text-white py-[26px]', 'lg:py-[110px]')}>
+        <div className={clsx('flex flex-col gap-6 text-white py-[26px]', 'lg:py-[50px]')}>
             <div className={clsx('flex flex-col gap-2 px-[30px]', 'lg:px-0!')}>
                 <h2 className={clsx('text-xl font-bold', 'lg:text-3xl lg:text-[34px]')}>{title}</h2>
                 <p className={clsx('text-xs max-w-2xl', 'md:text-sm')}>{description}</p>

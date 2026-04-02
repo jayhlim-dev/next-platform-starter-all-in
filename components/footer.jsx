@@ -18,7 +18,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
 export function Footer() {
     return (
-        <footer className={clsx('w-full flex flex-col gap-16', 'lg:px-[162px] lg:pb-16 z-0')}>
+        <footer className={clsx('w-full flex flex-col gap-16', 'lg:px-[162px] lg:pb-13 z-0')}>
             <Glass
                 type="light-dark"
                 useHoverAnimation={false}

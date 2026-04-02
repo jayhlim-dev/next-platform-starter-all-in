@@ -128,15 +128,16 @@ export default function ProcessWorkflowSection() {
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
                 <h2 className={clsx('text-xl font-bold', 'lg:text-3xl lg:text-[34px]')}>{workflow_process.title}</h2>
-                <p className="text-xs max-w-2xl">{workflow_process.description}</p>
+                <p className={clsx('text-xs max-w-2xl', 'lg:text-xs')}>{workflow_process.description}</p>
             </div>
 
-            <div className={clsx('flex flex-col gap-6 items-center', 'lg:grid-cols-[1.2fr_1fr] lg:grid lg:gap-4')}>
+            <div className={clsx('flex flex-col gap-6 items-center', 'lg:grid-cols-[1fr_1fr] lg:grid lg:gap-6')}>
                 <Glass
+                    type="light-dark"
                     className={clsx(
-                        'relative col-span-1 flex min-h-[305px] flex-col overflow-hidden lg:rounded-3xl! p-8',
+                        'relative col-span-1 flex min-h-[300px] flex-col overflow-hidden lg:rounded-3xl! p-8',
                         'select-none touch-manipulation [-webkit-touch-callout:none]',
-                        'rounded-none! border border-t-white/30 lg:border-none! lg:min-h-[280px]'
+                        'rounded-none! border border-t-white/30 lg:border-none! lg:min-h-[280px] lg:p-7 lg:py-7'
                     )}
                     onMouseEnter={handleDetailPanelEnter}
                     onMouseLeave={handleDetailPanelLeave}
@@ -149,16 +150,16 @@ export default function ProcessWorkflowSection() {
                         key={activeStep}
                         className="animate-workflow-step-panel flex min-h-0 flex-1 flex-col justify-between gap-4"
                     >
-                        <p className="mt-2 text-6xl leading-none font-semibold text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)]">
+                        <p className="mt-2 text-6xl text-[57px] leading-none font-semibold text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)]">
                             {String(activeStep + 1).padStart(2, '0')}
                         </p>
 
                         <div className="flex flex-col gap-4">
-                            <h3 className={clsx('text-4xl text-[32px] font-medium capitalize', textSizeClass)}>
+                            <h3 className={clsx('text-4xl text-[54px] font-medium capitalize', textSizeClass)}>
                                 {workflow_process.process_steps[activeStep].title}
                             </h3>
                             <div className="h-px w-[10%] bg-[#D9D9D9]" />
-                            <p className="text-sm">{workflow_process.process_steps[activeStep].description}</p>
+                            <p className={clsx('text-sm')}>{workflow_process.process_steps[activeStep].description}</p>
                         </div>
                     </div>
 
@@ -187,7 +188,7 @@ export default function ProcessWorkflowSection() {
                                     className={clsx(
                                         'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
                                         'select-none touch-manipulation [-webkit-touch-callout:none]',
-                                        'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
+                                        'lg:rounded-2xl lg:px-3 lg:gap-6 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
                                         index === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                     )}
                                     onMouseEnter={() => scheduleStepHoverDelayed(index)}
@@ -200,14 +201,22 @@ export default function ProcessWorkflowSection() {
                                 >
                                     <div
                                         className={clsx(
-                                            'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-[#D9D9D9] color-[#D9D9D9]',
+                                            'rounded-full w-10 h-10 min-w-10 min-h-10 flex items-center justify-center  border-white',
                                             'text-xs font-bold border',
-                                            'lg:text-sm lg:font-normal lg:border-[0.5px]'
+                                            'lg:text-sm lg:font-normal lg:border-[0.5px] text-[#D9D9D9]',
+                                            activeStep === index
+                                                ? 'font-bold! text-white! border-white! border-[1.5px]!'
+                                                : ''
                                         )}
                                     >
                                         {String(index + 1).padStart(2, '0')}
                                     </div>
-                                    <div className={clsx('lg:leading-5 leading-4 text-xs! lg:text-base')}>
+                                    <div
+                                        className={clsx(
+                                            'lg:leading-5 leading-4 text-xs lg:text-base',
+                                            activeStep === index ? 'font-bold' : ''
+                                        )}
+                                    >
                                         {step.title}
                                     </div>
                                 </Glass>
@@ -242,7 +251,14 @@ export default function ProcessWorkflowSection() {
                                 >
                                     {String(index + 4).padStart(2, '0')}
                                 </div>
-                                <div className={clsx('lg:leading-5 leading-4 text-xs! lg:text-base')}>{step.title}</div>
+                                <div
+                                    className={clsx(
+                                        'lg:leading-5 leading-4 text-xs! lg:text-lg',
+                                        activeStep === index + 3 ? 'font-bold' : ''
+                                    )}
+                                >
+                                    {step.title}
+                                </div>
                             </Glass>
                         ))}
                     </div>

@@ -4,40 +4,66 @@ import DecisionSupportSection from 'components/section/home/DecisionSupportSecti
 import clsx from 'clsx';
 import { InView } from 'components/in-view';
 import { animationClass } from 'lib/animations';
-
-const scrollReveal = clsx('w-full', animationClass('fadeInUp', 'slow'));
+import Image from 'next/image';
 
 /** Delay between each section’s entrance animation (ms). */
 const SECTION_STAGGER_MS = 200;
 
+/**
+ * Do not put opacity/transform keyframe animations on an InView wrapper that
+ * contains Glass: backdrop-filter on descendants samples incorrectly (looks
+ * like plain transparency). Use a plain `w-full` in-view class and rely on
+ * `outOfViewClassName="opacity-0"` for a snap-in reveal, or animate inner
+ * non-glass nodes only.
+ */
 const revealedSections = [
-    { id: 'board', Component: BoardSection },
-    { id: 'decision', Component: DecisionSupportSection }
+    {
+        id: 'hero',
+        Component: HeroSection,
+        inViewClassName: clsx('w-full', animationClass('fadeInUp', 'slow'))
+    },
+    { id: 'board', Component: BoardSection, inViewClassName: 'w-full' },
+    { id: 'decision', Component: DecisionSupportSection, inViewClassName: 'w-full' }
 ];
 
 export default function Page() {
     return (
-        <div
-            className={clsx(
-                'min-h-screen w-full flex flex-col gap-16 py-16',
-                'lg:px-[10%]'
-            )}
-            aria-label="Home"
-        >
-            <HeroSection />
-            {revealedSections.map(({ id, Component }, index) => (
+        <div className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%]')} aria-label="Home">
+            <div className="absolute top-0 left-0 w-full -z-3">
+                <Image
+                    src="/images/desktop/1-a.png"
+                    alt="Noise"
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="w-full h-full object-cover"
+                />
+            </div>
+            {revealedSections.map(({ id, Component, inViewClassName }, index) => (
                 <InView
                     key={id}
                     once
                     threshold={0.2}
                     className="w-full"
                     outOfViewClassName="opacity-0"
-                    inViewClassName={scrollReveal}
+                    inViewClassName={inViewClassName}
                     style={{ animationDelay: `${index * SECTION_STAGGER_MS}ms` }}
                 >
                     <Component />
                 </InView>
             ))}
+
+            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3">
+                <Image
+                    src="/images/desktop/1-b.png"
+                    alt=""
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="h-full w-full object-cover "
+                    // className="h-full w-full object-cover motion-reduce:animate-none animate-home-bottom-bg-drift"
+                />
+            </div>
         </div>
     );
 }

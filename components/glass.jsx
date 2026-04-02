@@ -14,6 +14,9 @@ function getHoverClasses(type) {
     if (type === 'dark') {
         return 'hover:border-white/25 hover:bg-[#091642]/40 ';
     }
+    if (type === 'light-dark') {
+        return 'hover:border-white/25 hover:bg-[#091642]/10 ';
+    }
     return 'hover:border-white/25 hover:bg-white/[0.08] ';
 }
 

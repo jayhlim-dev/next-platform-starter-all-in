@@ -236,6 +236,33 @@
     }
 }
 
+/** Decorative full-bleed image — slow drift so edges stay hidden under overflow-hidden */
+@keyframes home-bottom-bg-drift {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1.08);
+    }
+
+    33% {
+        transform: translate3d(1.25%, -1.25%, 0) scale(1.1);
+    }
+
+    66% {
+        transform: translate3d(-1.25%, 0.75%, 0) scale(1.09);
+    }
+}
+
+/* Fade only — backdrop-filter is applied statically; animating blur in keyframes is unreliable in browsers */
+@keyframes ui-glass-blur-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @layer utilities {
     .text-2xs {
         font-size: 0.625rem;
@@ -307,6 +334,30 @@
         --ui-animation-duration: 350ms;
         --ui-animation-easing: cubic-bezier(0.16, 1, 0.3, 1);
         animation: ui-scale-in var(--ui-animation-duration) var(--ui-animation-easing) both;
+    }
+
+    .animate-ui-glass-blur-in {
+        -webkit-backdrop-filter: blur(28px);
+        backdrop-filter: blur(28px);
+        animation: ui-glass-blur-in 0.35s ease-out forwards;
+    }
+
+    /** Home page bottom decorative image — see app/page.jsx */
+    .animate-home-bottom-bg-drift {
+        transform-origin: center bottom;
+        animation: home-bottom-bg-drift 32s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .animate-ui-glass-blur-in {
+            animation: none;
+            opacity: 1;
+        }
+
+        .animate-home-bottom-bg-drift {
+            animation: none;
+            transform: scale(1.06);
+        }
     }
 
     /* Must follow .animate-ui-* so fast/slow/easing override preset defaults */

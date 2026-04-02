@@ -8,10 +8,19 @@ import secondaryLogo from 'public/images/logo/secondary-logo.png';
 export default function HeroSection() {
     return (
         <section
-            className="flex w-full min-h-[min(38vh,420px)] flex-col justify-center gap-8 py-14 pb-0! px-[30px] md:px-0"
+            className={clsx(
+                'flex w-full min-h-[min(38vh,420px)] flex-col justify-center gap-4 py-14 pb-0! px-[30px]',
+                'lg:px-0 lg:flex-row'
+            )}
             aria-label="Hero"
         >
-            <div className={clsx('flex w-full flex-col items-start gap-6', animationClass('fadeInUp', 'slow'))}>
+            <div
+                className={clsx(
+                    'flex w-full flex-col items-start gap-6',
+                    animationClass('fadeInUp', 'slow'),
+                    'md:justify-center'
+                )}
+            >
                 <Image
                     src={secondaryLogo}
                     alt="ScaleBio Partners"
@@ -32,6 +41,16 @@ export default function HeroSection() {
                 >
                     Let&apos;s talk
                 </Link>
+            </div>
+            <div className="w-fit max-w-full min-w-[370px]">
+                <Image
+                    src="/images/desktop/1-H.png"
+                    alt="Noise"
+                    width={359}
+                    height={338}
+                    priority
+                    className="h-auto w-full object-cover"
+                />
             </div>
         </section>
     );

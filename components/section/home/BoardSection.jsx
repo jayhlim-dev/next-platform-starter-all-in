@@ -6,7 +6,7 @@ import clsx from 'clsx';
 export default function BoardSection() {
     const { title, subTitle, boardSector } = boardData;
     return (
-        <div className="flex flex-col gap-6 text-white px-[25px] lg:px-0">
+        <div className="flex flex-col gap-6 text-white px-[25px] lg:px-0 opacity-100">
             <div className="flex flex-col gap-2">
                 <h2 className="text-2xl font-bold">{title}</h2>
                 <p className={clsx('text-xs max-w-xs', 'lg:max-w-2xl lg:text-sm')}>{subTitle}</p>
@@ -23,7 +23,7 @@ export default function BoardSection() {
                         )}
                     >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}
-                        <Image src={sector.image} alt="" width={89} height={89} />
+                        <Image src={sector.image} alt="" width={89} height={89} priority />
                         {/* </div> */}
                         <p
                             className={clsx(
