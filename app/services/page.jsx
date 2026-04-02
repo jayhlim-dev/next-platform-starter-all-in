@@ -17,7 +17,7 @@ const sections = [
 
 export default function Page() {
     return (
-        <div className={clsx('min-h-screen w-full py-16 flex flex-col gap-16 ', 'lg:px-[162px] lg:pb-12')} aria-label="Services">
+        <div className={clsx('min-h-screen w-full py-16 flex flex-col gap-16 re', 'lg:px-[162px] lg:pb-12')} aria-label="Services">
             <div className="absolute top-0 left-0 w-full -z-3"></div>
             {sections.map(({ id, Component, inViewClassName }, index) => (
                 <InView

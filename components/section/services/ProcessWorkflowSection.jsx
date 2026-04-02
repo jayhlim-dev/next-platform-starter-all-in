@@ -127,7 +127,7 @@ export default function ProcessWorkflowSection() {
     return (
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
-                <h2 className={clsx('text-xl font-bold', 'lg:text-3xl lg:text-[34px]')}>{workflow_process.title}</h2>
+                <h2 className={clsx('text-xl font-bold', 'lg:text-[34px]')}>{workflow_process.title}</h2>
                 <p className={clsx('text-xs max-w-2xl', 'lg:text-xs')}>{workflow_process.description}</p>
             </div>
 

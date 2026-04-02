@@ -1,52 +1,52 @@
 {
     "title": "Our Services",
-    "subTitle": "Scalebio supports early-stage biotech companies in moving from technical validation to commercial readiness.",
+    "subTitle": "Scalebio Partners supports early-stage biotech companies in moving from technical validation to commercial readiness",
     "content": {
         "workflow_process": {
             "title": "Our Process Workflow",
-            "description": "Our approach is structured, collaborative, and tailored to each company's needs.",
+            "description": "Our approach is structured, collaborative, and tailored to each company's needs",
             "process_steps": [
                 {
                     "title": "Initial contact",
-                    "description": "An introductory discussion to understand your company’s vision, scientific focus, stage, and strategic priorities."
+                    "description": "An introductory discussion to understand your company’s vision, scientific focus, stage, and strategic priorities"
                 },
                 {
                     "title": "Company evaluation",
-                    "description": "A structured assessment of your technology, business positioning, and market opportunity to identify where support can create the most value."
+                    "description": "A structured assessment of your technology, business positioning, and market opportunity to identify where support can create the most value"
                 },
                 {
                     "title": "Discussion of focus points",
-                    "description": "A focused conversation to define the key priorities of the engagement, from product development and partnerships to fundraising and commercialization."
+                    "description": "A focused conversation to define the key priorities of the engagement, from product development and partnerships to fundraising and commercialization"
                 },
                 {
                     "title": "What we can offer",
-                    "description": "A proposal for a tailored consultation outlining the most relevant areas of support, expected deliverables, and strategic outcomes."
+                    "description": "A proposal for a tailored consultation outlining the most relevant areas of support, expected deliverables, and strategic outcomes"
                 },
                 {
                     "title": "Contract agreement",
-                    "description": "A clear agreement is established to align on scope, timelines, responsibilities, and next steps."
+                    "description": "A clear agreement is established to align on scope, timelines, responsibilities, and next steps"
                 }
             ]
         },
         "how_we_work": {
             "title": "How We Support Your Business",
-            "description": "Helping early-stage biotech ventures turn scientific potential into commercial readiness.",
+            "description": "Helping early-stage biotech ventures turn scientific potential into commercial readiness",
             "work_steps": [
                 {
                     "title": "Product Pipeline Strategy",
-                    "description": "Advising on the optimization and prioritization of the product development pipeline."
+                    "description": "Advising on the optimization and prioritization of the product development pipeline"
                 },
                 {
                     "title": "Market Analysis Support",
-                    "description": "Delivering insights and support related to market trends, competitive landscape, and market entry strategies."
+                    "description": "Delivering insights and support related to market trends, competitive landscape, and market entry strategies"
                 },
                 {
                     "title": "Business Development Advisory",
-                    "description": "Supporting strategic partnerships, regulatory planning, funding opportunities, and go-to-market strategy."
+                    "description": "Supporting strategic partnerships, regulatory planning, funding opportunities, and go-to-market strategy"
                 },
                 {
                     "title": "Pitch Deck Review",
-                    "description": "Reviewing and providing input on pitch decks for investment and partnership presentations."
+                    "description": "Reviewing and providing input on pitch decks for investment and partnership presentations"
                 }
             ]
         }
