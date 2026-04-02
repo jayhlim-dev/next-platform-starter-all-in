@@ -2,7 +2,12 @@ import '../styles/globals.css';
 import { AppChrome } from '../components/app-chrome';
 import { Poppins } from 'next/font/google';
 
+const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+
 export const metadata = {
+    metadataBase: new URL(siteUrl),
     title: {
         template: '%s | ScaleBio Partners',
         default: 'ScaleBio Partners'

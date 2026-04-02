@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import clsx from 'clsx';
 import { InView } from 'components/in-view';
 import { animationClass } from 'lib/animations';
@@ -51,7 +52,13 @@ export default function Page() {
                     inViewClassName={inViewClassName}
                     style={{ animationDelay: `${index * SECTION_STAGGER_MS}ms` }}
                 >
-                    <Component />
+                    {id === 'contact-form' ? (
+                        <Suspense fallback={<div className="w-full min-h-[320px]" aria-hidden />}>
+                            <Component />
+                        </Suspense>
+                    ) : (
+                        <Component />
+                    )}
                 </InView>
             ))}
 
