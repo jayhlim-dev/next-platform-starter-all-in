@@ -12,7 +12,7 @@ export default function OwnerDetailsSection() {
     return (
         <div
             className={clsx(
-                'flex  text-white justify-center items-center ',
+                'flex text-white justify-center items-center ',
                 'flex-col px-[30px] gap-9 py-13 pt-0',
                 'lg:flex-row lg:px-0 lg:gap-16 lg:pt-30'
             )}
@@ -25,6 +25,7 @@ export default function OwnerDetailsSection() {
                 className={clsx(
                     'flex flex-col gap-3 max-w-[580px] rounded-2xl border-white/20 border',
                     'px-5 py-5',
+                    'md:max-w-[90%]',
                     'lg:px-14 lg:py-10 lg:gap-5 '
                 )}
                 type="light"

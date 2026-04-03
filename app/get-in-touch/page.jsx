@@ -10,7 +10,11 @@ import Image from 'next/image';
 const sections = [
     { id: 'hero', Component: HeroSection, inViewClassName: clsx('w-full', animationClass('fadeInUp', 'slow')) },
     { id: 'owner-details', Component: OwnerDetailsSection },
-    { id: 'contact-form', Component: ContactFormSection }
+    {
+        id: 'contact-form',
+        Component: ContactFormSection,
+        inViewClassName: clsx('w-full', animationClass('fadeInUp', 'slow'))
+    }
 ];
 
 /** Delay between each section’s entrance animation (ms). */

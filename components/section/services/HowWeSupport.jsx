@@ -23,14 +23,19 @@ export default function HowWeSupportSection() {
                     <Glass
                         key={step.title}
                         type="light"
-                        className="py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20! max-w-[280px] min-w-[280px]"
+                        className={clsx(
+                            'py-5 px-5 rounded-2xl items-start flex flex-col gap-6 min-h-[306px] border-white/20! max-w-[280px] min-w-[280px]',
+                            'lg:min-w-[min(28rem,50%)]'
+                        )}
                         useHoverAnimation={true}
                     >
                         <p className="text-2xl font-extralight w-full text-white">0{String(index + 1)}</p>
-                        <div className="flex flex-col gap-2 justify-between h-full">
+                        <div className={clsx('flex flex-col gap-2 justify-between h-full', 'lg:gap-[min(28rem,20px)]')}>
                             <h3 className="min-h-[72px] tex-lg text-[22px]! font-bold">{step.title}</h3>
                             <div className="flex gap-3 flex-col">
-                                <p className="text-sm text-white min-h-[84px]">{step.description}</p>
+                                <p className={clsx('text-sm text-white min-h-[84px]', 'lg:min-h-[min(28rem,150px)]')}>
+                                    {step.description}
+                                </p>
                             </div>
                         </div>
                     </Glass>

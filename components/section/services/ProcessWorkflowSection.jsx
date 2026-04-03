@@ -123,7 +123,7 @@ export default function ProcessWorkflowSection() {
     };
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
-    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl' : 'lg:text-5xl';
+    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl lg:leading-14' : 'lg:text-5xl';
     return (
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
@@ -220,7 +220,7 @@ export default function ProcessWorkflowSection() {
                                     <div
                                         className={clsx(
                                             'lg:leading-5 leading-4 text-xs lg:text-base',
-                                            activeStep === index ? 'font-bold' : ''
+                                            activeStep === index ? 'font-bold' : '',
                                         )}
                                     >
                                         {step.title}
@@ -237,7 +237,7 @@ export default function ProcessWorkflowSection() {
                                 className={clsx(
                                     'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
                                     'select-none touch-manipulation [-webkit-touch-callout:none]',
-                                    'lg:rounded-2xl lg:px-3 lg:gap-4 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
+                                    'lg:rounded-2xl lg:px-3 lg:gap-6 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
                                     index + 3 === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
                                 )}
                                 onMouseEnter={() => scheduleStepHoverDelayed(index + 3)}
@@ -250,16 +250,19 @@ export default function ProcessWorkflowSection() {
                             >
                                 <div
                                     className={clsx(
-                                        'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-[#D9D9D9] color-[#D9D9D9]',
+                                        'rounded-full w-10 h-10 min-w-10 min-h-10 flex items-center justify-center  border-white',
                                         'text-xs font-bold border',
-                                        'lg:text-sm lg:font-normal lg:border-[0.5px]'
+                                        'lg:text-sm lg:font-normal lg:border-[0.5px] text-[#D9D9D9]',
+                                        activeStep === index + 3
+                                            ? 'font-bold! text-white! border-white! border-[1.5px]!'
+                                            : ''
                                     )}
                                 >
                                     {String(index + 4).padStart(2, '0')}
                                 </div>
                                 <div
                                     className={clsx(
-                                        'lg:leading-5 leading-4 text-xs! lg:text-lg',
+                                        'lg:leading-5 leading-4 text-xs lg:text-base',
                                         activeStep === index + 3 ? 'font-bold' : ''
                                     )}
                                 >

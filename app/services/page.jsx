@@ -18,7 +18,12 @@ const sections = [
 export default function Page() {
     return (
         <div
-            className={clsx('min-h-screen w-full py-16 flex flex-col gap-20', 'lg:px-[162px] lg:pb-12')}
+            className={clsx(
+                'min-h-screen w-full py-16 flex flex-col gap-20',
+                // 'lg:px-[min(2000rem,110px)]',
+                'lg:pb-12 lg:px-[5%]',
+                'xl:px-[162px] '
+            )}
             aria-label="Services"
         >
             <div className="absolute top-0 left-0 w-full -z-2 block lg:hidden">

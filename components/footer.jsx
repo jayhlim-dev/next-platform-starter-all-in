@@ -11,20 +11,21 @@ import { SITE_MAILBOX } from 'lib/site-mailbox';
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Services', href: '/services' },
-    { linkText: 'Get In Touch', href: '/get-in-touch' }
+    { linkText: 'Get in Touch', href: '/get-in-touch' }
 ];
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/scalebio-partners';
 
 export function Footer() {
     return (
-        <footer className={clsx('w-full flex flex-col gap-16', 'lg:px-[162px] lg:pb-13 z-0')}>
+        <footer className={clsx('w-full flex flex-col gap-16', 'xl:px-[162px] lg:pb-13 z-0', 'lg:px-[8%]')}>
             <Glass
                 type="light-dark"
                 useHoverAnimation={false}
                 className={clsx(
                     'z-50 flex w-full flex-col gap-10 rounded-t-4xl backdrop-blur-[28px] px-8 py-10',
-                    'lg:gap-5 lg:px-12 lg:rounded-3xl'
+                    'lg:gap-5 lg:px-8 lg:rounded-3xl',
+                    'xl:px-12'
                 )}
             >
                 {/* Top row: brand | nav | CTA */}
@@ -33,17 +34,28 @@ export function Footer() {
                         <Image
                             src={mainLogo}
                             alt="ScaleBio Partners"
-                            className={clsx('h-auto max-w-[324px]', 'lg:w-[252px]')}
+                            className={clsx(
+                                'h-auto max-w-[324px]',
+                                'lg:max-w-[150px]',
+                                'xl:w-[252px] xl:max-w-[min(26.25rem,200px)]'
+                            )}
                             priority
                         />
                     </Link>
 
-                    <nav className="flex flex-wrap items-center justify-center gap-8" aria-label="Footer">
+                    <nav
+                        className={clsx('flex items-center justify-center gap-8', 'md:gap-5', 'xl:gap-6')}
+                        aria-label="Footer"
+                    >
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-base font-bold text-white no-underline transition hover:opacity-85"
+                                className={clsx(
+                                    'text-base font-bold text-white no-underline transition hover:opacity-85 whitespace-nowrap',
+                                    'md:text-sm',
+                                    'xl:text-base'
+                                )}
                             >
                                 {item.linkText}
                             </Link>
@@ -53,19 +65,21 @@ export function Footer() {
                     <div
                         className={clsx(
                             'flex gap-0 min-w-[352px] items-center justify-center',
-                            'lg:gap-4 lg:justify-start lg:items-center'
+                            // 'md:max-w-[120px]',
+                            'lg:gap-4 lg:justify-start lg:items-center lg:max-w-none'
                         )}
                     >
                         <div className={clsx('flex flex-col mr-2 max-w-[160px]', 'lg:max-w-none')}>
-                            <p className={clsx('text-base font-bold text-white whitespace-nowrap', 'lg:leading-snug')}>
-                                Ready to turn your
-                            </p>
                             <p
                                 className={clsx(
-                                    'text-base font-bold text-white',
-                                    'lg:whitespace-nowrap lg:max-w-none lg:leading-snug'
+                                    'text-base font-bold text-white whitespace-nowrap',
+                                    'lg:leading-snug',
+                                    'md:text-sm'
                                 )}
                             >
+                                Ready to turn your
+                            </p>
+                            <p className={clsx('text-base font-bold text-white', 'lg:leading-snug lg:whitespace-nowrap', 'md:text-sm')}>
                                 breakthrough into business
                             </p>
                         </div>

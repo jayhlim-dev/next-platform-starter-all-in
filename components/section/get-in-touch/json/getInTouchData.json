@@ -37,7 +37,7 @@
         "title": "Contact Us",
         "form_fields": [
             {
-                "label": "Name",
+                "label": "Full name",
                 "name": "name",
                 "placeholder": "Enter your full name",
                 "required": true
@@ -57,7 +57,7 @@
             {
                 "label": "Work Email",
                 "name": "work_email",
-                "placeholder": "name@company.com",
+                "placeholder": "Name@company.com",
                 "required": true
             },
             {
