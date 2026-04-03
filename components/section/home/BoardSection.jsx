@@ -19,7 +19,7 @@ export default function BoardSection() {
                         type="light"
                         className={clsx(
                             'py-5 px-3 flex rounded-2xl items-center justify-between border-white/10! gap-4! flex-col',
-                            'lg:flex-row lg:px-5 lg:border-white/20!'
+                            'lg:flex-row lg:px-5 py-4! lg:border-white/20!'
                         )}
                     >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}

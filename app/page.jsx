@@ -28,7 +28,10 @@ const revealedSections = [
 
 export default function Page() {
     return (
-        <div className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%]')} aria-label="Home">
+        <div
+            className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'xl:px-[10%] min-[1700px]:px-[16%]!')}
+            aria-label="Home"
+        >
             <div className="absolute top-0 left-0 w-full -z-3 hidden lg:block">
                 <Image
                     src="/images/desktop/1-a.png"
@@ -64,25 +67,35 @@ export default function Page() {
                 </InView>
             ))}
 
-            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 hidden lg:block">
+            <div
+                className={clsx(
+                    'pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 hidden lg:block',
+                    // Smooth pull from 1700px → ~2600px (was many steps); caps at -67.5rem (~bottom-270)
+                    'min-[1700px]:bottom-[clamp(-67.5rem,calc(-20rem-(100vw-1700px)*0.844),-20rem)]!'
+                )}
+            >
                 <Image
-                    src="/images/desktop/1-b.png"
+                    src="/images/desktop/1-b-n1.png"
                     alt=""
                     width={1000}
                     height={1000}
                     priority
-                    className="h-full w-full object-cover "
-                    // className="h-full w-full object-cover motion-reduce:animate-none animate-home-bottom-bg-drift"
+                    className="h-full w-full object-cover object-bottom"
                 />
             </div>
-            <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden">
+            <div
+                className={clsx(
+                    'pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden',
+                    'xl:hidden'
+                )}
+            >
                 <Image
-                    src="/images/mobile/1-a.png"
+                    src="/images/mobile/1-a2.png"
                     alt=""
                     width={1000}
                     height={1000}
                     priority
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-bottom"
                 />
             </div>
         </div>

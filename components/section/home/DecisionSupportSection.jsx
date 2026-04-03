@@ -28,7 +28,8 @@ export default function DecisionSupportSection() {
                         type="extra-light"
                         className={clsx(
                             'py-6 px-7 rounded-3xl items-center justify-between flex flex-col gap-2 min-w-[235px]! h-[350px]',
-                            'lg:min-w-0 lg:h-100! lg:rounded-2xl lg:px-6 '
+                            'lg:min-w-0 lg:h-100! lg:rounded-2xl lg:px-6 ',
+                            'lg:min-w-[min(28rem,50%)]!'
                         )}
                         useHoverAnimation={true}
                         // useBorderOnHoverOnly={true}
@@ -36,7 +37,14 @@ export default function DecisionSupportSection() {
                         <h3 className={clsx('text-base font-bold ', 'lg:text-2xl lg:leading-9')}>{sector.title}</h3>
                         <div className="flex gap-3 flex-col">
                             <div className="w-12 h-0.5 bg-white rounded-full" />
-                            <p className={clsx('text-xs lg:text-sm text-white min-h-[48px]', 'lg:min-h-0')}>
+                            <p
+                                className={clsx(
+                                    'text-xs lg:text-sm text-white min-h-[48px]',
+                                    // 'lg:min-h-0',
+                                    'xl:min-h-[60px]!',
+                                    //  'min-[1700px]:min-h-[80px]!'
+                                )}
+                            >
                                 {sector.description}
                             </p>
                             <p

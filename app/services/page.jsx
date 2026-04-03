@@ -22,7 +22,7 @@ export default function Page() {
                 'min-h-screen w-full py-16 flex flex-col gap-20',
                 // 'lg:px-[min(2000rem,110px)]',
                 'lg:pb-12 lg:px-[5%]',
-                'xl:px-[162px] '
+                'xl:px-[162px] min-[1700px]:px-[20%]!'
             )}
             aria-label="Services"
         >
@@ -53,7 +53,7 @@ export default function Page() {
 
             <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 hidden lg:block">
                 <Image
-                    src="/images/desktop/2-a.png"
+                    src="/images/desktop/2-a-n.png"
                     alt=""
                     width={1000}
                     height={1000}
@@ -64,7 +64,7 @@ export default function Page() {
             </div>
             <div className="pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden">
                 <Image
-                    src="/images/mobile/2-a.png"
+                    src="/images/mobile/2-a2.png"
                     alt=""
                     width={1000}
                     height={1000}

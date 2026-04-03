@@ -18,7 +18,7 @@ export default function OwnerDetailsSection() {
             )}
         >
             <div className={clsx('flex flex-col gap-2 max-w-[335px]', 'lg:max-w-none')}>
-                <Image src="/images/content/owner.png" alt="Owner Details" width={460} height={460} />
+                <Image src="/images/content/owner-1.png" alt="Owner Details" width={460} height={460} />
             </div>
 
             <Glass

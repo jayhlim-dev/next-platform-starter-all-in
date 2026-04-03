@@ -123,7 +123,8 @@ export default function ProcessWorkflowSection() {
     };
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
-    const textSizeClass = currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl lg:leading-14' : 'lg:text-5xl';
+    const textSizeClass =
+        currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl lg:leading-14 leading-10' : 'lg:text-5xl leading-10';
     return (
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
@@ -135,7 +136,8 @@ export default function ProcessWorkflowSection() {
                 <Glass
                     type="light-dark"
                     className={clsx(
-                        'relative col-span-1 flex min-h-[300px] flex-col overflow-hidden lg:rounded-3xl! p-8',
+                        'relative col-span-1 flex min-h-[300px] flex-col overflow-hidden lg:rounded-3xl!',
+                        'p-8', //?
                         'select-none touch-manipulation [-webkit-touch-callout:none]',
                         'rounded-none! border border-t-white/30 lg:border-none! lg:min-h-[280px] lg:p-7 lg:py-7'
                     )}
@@ -150,16 +152,17 @@ export default function ProcessWorkflowSection() {
                         key={activeStep}
                         className="animate-workflow-step-panel flex min-h-0 flex-1 flex-col justify-between gap-4"
                     >
-                        <p className="mt-2 text-6xl text-[57px] leading-none font-semibold text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)]">
+                        <p className="text-6xl text-[57px] leading-none font-semibold text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)]">
                             {String(activeStep + 1).padStart(2, '0')}
                         </p>
 
                         <div className="flex flex-col gap-4">
                             <h3
                                 className={clsx(
-                                    'flex min-h-[96px] flex-col justify-end text-[34px] font-medium capitalize',
+                                    'flex min-h-[80px] flex-col justify-end text-[34px] font-medium capitalize',
                                     textSizeClass,
-                                    'lg:block lg:min-h-0 lg:text-4xl lg:text-[54px] lg:justify-start'
+                                    'lg:block lg:min-h-0 lg:text-4xl lg:text-[54px] lg:justify-start',
+                                    'md:min-h-[96px]'
                                 )}
                             >
                                 {workflow_process.process_steps[activeStep].title}
@@ -192,10 +195,12 @@ export default function ProcessWorkflowSection() {
                                     key={step.title}
                                     type="light"
                                     className={clsx(
-                                        'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                        'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center   ',
                                         'select-none touch-manipulation [-webkit-touch-callout:none]',
                                         'lg:rounded-2xl lg:px-3 lg:gap-6 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
-                                        index === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
+                                        index === activeStep ? 'bg-white/8! font-bold lg:font-normal' : '',
+                                        'min-h-[50px] max-h-[50px]',
+                                        'md:min-h-[54px] md:max-h-[54px]'
                                     )}
                                     onMouseEnter={() => scheduleStepHoverDelayed(index)}
                                     onMouseLeave={cancelDelayedStepHover}
@@ -207,12 +212,13 @@ export default function ProcessWorkflowSection() {
                                 >
                                     <div
                                         className={clsx(
-                                            'rounded-full w-10 h-10 min-w-10 min-h-10 flex items-center justify-center  border-white',
+                                            'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-white',
                                             'text-xs font-bold border',
                                             'lg:text-sm lg:font-normal lg:border-[0.5px] text-[#D9D9D9]',
                                             activeStep === index
                                                 ? 'font-bold! text-white! border-white! border-[1.5px]!'
-                                                : ''
+                                                : '',
+                                            'md:w-10 md:h-10 md:min-w-10 md:min-h-10'
                                         )}
                                     >
                                         {String(index + 1).padStart(2, '0')}
@@ -220,7 +226,7 @@ export default function ProcessWorkflowSection() {
                                     <div
                                         className={clsx(
                                             'lg:leading-5 leading-4 text-xs lg:text-base',
-                                            activeStep === index ? 'font-bold' : '',
+                                            activeStep === index ? 'font-bold' : ''
                                         )}
                                     >
                                         {step.title}
@@ -235,10 +241,12 @@ export default function ProcessWorkflowSection() {
                                 key={step.title}
                                 type="light"
                                 className={clsx(
-                                    'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center min-h-[54px] max-h-[54px]',
+                                    'flex gap-3 text-start border-white/20! rounded-4xl px-4 items-center',
                                     'select-none touch-manipulation [-webkit-touch-callout:none]',
                                     'lg:rounded-2xl lg:px-3 lg:gap-6 lg:min-h-[62px] lg:py-2 lg:max-h-unset',
-                                    index + 3 === activeStep ? 'bg-white/8! font-bold lg:font-normal' : ''
+                                    index + 3 === activeStep ? 'bg-white/8! font-bold lg:font-normal' : '',
+                                    'min-h-[50px] max-h-[50px]',
+                                    'md:min-h-[54px] md:max-h-[54px]'
                                 )}
                                 onMouseEnter={() => scheduleStepHoverDelayed(index + 3)}
                                 onMouseLeave={cancelDelayedStepHover}
@@ -250,12 +258,13 @@ export default function ProcessWorkflowSection() {
                             >
                                 <div
                                     className={clsx(
-                                        'rounded-full w-10 h-10 min-w-10 min-h-10 flex items-center justify-center  border-white',
+                                        'rounded-full w-8 h-8 min-w-8 min-h-8 flex items-center justify-center  border-white',
                                         'text-xs font-bold border',
                                         'lg:text-sm lg:font-normal lg:border-[0.5px] text-[#D9D9D9]',
                                         activeStep === index + 3
                                             ? 'font-bold! text-white! border-white! border-[1.5px]!'
-                                            : ''
+                                            : '',
+                                        'md:w-10 md:h-10 md:min-w-10 md:min-h-10'
                                     )}
                                 >
                                     {String(index + 4).padStart(2, '0')}
