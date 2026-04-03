@@ -12,7 +12,7 @@ export default function BaseLayout({ children }) {
         >
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 top-0 -z-2 h-screen bg-linear-to-b from-[#10183D] to-[#10183D]/0"
+                className="pointer-events-none absolute inset-x-0 top-0 -z-2 sm h-[150vh] md:h-screen bg-linear-to-b from-[#10183D] to-[#10183D]/0"
             />
             {children}
         </div>

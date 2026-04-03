@@ -10,7 +10,7 @@ export default function HeroSection() {
         <section
             className={clsx(
                 'flex w-full min-h-[min(38vh,420px)] flex-col justify-end gap-4 py-14 pb-10 px-[30px]',
-                'lg:px-0 lg:flex-row lg:justify-center lg:py-14!'
+                'lg:px-0 lg:flex-row lg:justify-center lg:py-14! lg:pb-0!'
             )}
             aria-label="Hero"
         >

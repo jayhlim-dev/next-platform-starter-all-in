@@ -85,7 +85,7 @@ export function Footer() {
                         </div>
                         <Link
                             href="/get-in-touch"
-                            className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[180px] min-h-[40px] bg-black/10"
+                            className="inline-flex items-center justify-center rounded-[10px] border border-white px-6 text-base font-bold tracking-wide text-white no-underline transition hover:bg-white/10 min-w-[150px] md:min-w-[180px] min-h-[40px] bg-black/10"
                         >
                             Let&apos;s Talk
                         </Link>
