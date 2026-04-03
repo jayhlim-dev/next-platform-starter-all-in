@@ -42,6 +42,7 @@ export default function DecisionSupportSection() {
                                     'text-xs lg:text-sm text-white min-h-[48px]',
                                     // 'lg:min-h-0',
                                     'xl:min-h-[60px]!',
+                                    'lg:min-h-[80px]!',
                                     //  'min-[1700px]:min-h-[80px]!'
                                 )}
                             >

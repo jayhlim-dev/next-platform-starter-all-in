@@ -29,7 +29,7 @@ const revealedSections = [
 export default function Page() {
     return (
         <div
-            className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'xl:px-[10%] min-[1700px]:px-[16%]!')}
+            className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%] min-[1700px]:px-[16%]!')}
             aria-label="Home"
         >
             <div className="absolute top-0 left-0 w-full -z-3 hidden lg:block">
@@ -86,7 +86,8 @@ export default function Page() {
             <div
                 className={clsx(
                     'pointer-events-none absolute -bottom-2 left-0 w-full overflow-hidden -z-3 block lg:hidden',
-                    'xl:hidden'
+                    'xl:hidden',
+                    'min-[455]:bottom-[clamp(-67.5rem,calc(-20rem-(100vw-455)*0.844),-20rem)]!'
                 )}
             >
                 <Image
