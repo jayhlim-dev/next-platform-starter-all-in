@@ -26,7 +26,7 @@ export default function OwnerDetailsSection() {
                     'flex flex-col gap-3 max-w-[580px] rounded-2xl border-white/20 border',
                     'px-5 py-5',
                     'md:max-w-[90%]',
-                    'lg:px-14 lg:py-10 lg:gap-5 '
+                    'lg:px-14 lg:py-10 lg:gap-5 lg:max-w-[580px]!'
                 )}
                 type="light"
             >
