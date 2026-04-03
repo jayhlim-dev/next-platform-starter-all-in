@@ -17,8 +17,8 @@ export default function OwnerDetailsSection() {
                 'lg:flex-row lg:px-0 lg:gap-16 lg:pt-30'
             )}
         >
-            <div className={clsx('flex flex-col gap-2 max-w-[335px]', 'lg:max-w-none')}>
-                <Image src="/images/content/owner-1.png" alt="Owner Details" width={460} height={460} />
+            <div className={clsx('flex flex-col gap-2 max-w-[335px]', 'lg:max-w-[440px]!')}>
+                <Image src="/images/content/owner-a2.png" alt="Owner Details" width={460} height={460} />
             </div>
 
             <Glass
@@ -26,7 +26,7 @@ export default function OwnerDetailsSection() {
                     'flex flex-col gap-3 max-w-[580px] rounded-2xl border-white/20 border',
                     'px-5 py-5',
                     'md:max-w-[90%]',
-                    'lg:px-14 lg:py-10 lg:gap-5 lg:max-w-[580px]!'
+                    'lg:px-14 lg:py-10 lg:gap-5 lg:max-w-[580px]! xl:max-w-[545px]!'
                 )}
                 type="light"
             >

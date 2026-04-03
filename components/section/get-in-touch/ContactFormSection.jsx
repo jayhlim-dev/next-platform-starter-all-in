@@ -75,7 +75,9 @@ export default function ContactFormSection() {
                 return;
             }
             setStatus('success');
-            setMessage('Thanks — your message was sent.');
+            const successMsg = 'Thanks — your message was sent.';
+            // setMessage(successMsg);
+            window.alert(successMsg);
             formEl.reset();
         } catch {
             setStatus('error');
