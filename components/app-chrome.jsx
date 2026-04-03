@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Footer } from './footer';
 import { Header } from './header';
 import BaseLayout from './wrapper/BaseLayout';
@@ -38,6 +38,19 @@ function BreakpointDebug() {
     );
 }
 
+function shouldShowBreakpointDebug(searchParams) {
+    const raw = searchParams.get('showViewport');
+    if (raw === null) return false;
+    const off = ['false', '0', 'no'].includes(raw.toLowerCase());
+    return !off;
+}
+
+function BreakpointDebugGate() {
+    const searchParams = useSearchParams();
+    if (!shouldShowBreakpointDebug(searchParams)) return null;
+    return <BreakpointDebug />;
+}
+
 export function AppChrome({ children }) {
     const pathname = usePathname();
     const fullBleed = pathname === '/home' || pathname === '/home1';
@@ -50,7 +63,9 @@ export function AppChrome({ children }) {
     // change the root padding on baseLayout to change the padding for the entire app
     return (
         <BaseLayout>
-            <BreakpointDebug />
+            <Suspense fallback={null}>
+                <BreakpointDebugGate />
+            </Suspense>
             <Header />
             <main className="grow">{children}</main>
             <Footer />
