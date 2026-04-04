@@ -4,39 +4,39 @@
     "boardSector": [
         {
             "title": "Biopharma & Therapeutics",
-            "image": "/images/svg/1.svg"
+            "image": "/images/png/1.1.png"
         },
         {
             "title": "Medtech & Diagnostics",
-            "image": "/images/svg/2.svg"
+            "image": "/images/png/2.2.png"
         },
         {
             "title": "AgriTech & Food Biotech",
-            "image": "/images/svg/3.svg"
+            "image": "/images/png/3.2.png"
         },
         {
             "title": "Aquaculture & Marine Biotech",
-            "image": "/images/svg/4.svg"
+            "image": "/images/png/4.1.png"
         },
         {
             "title": "Industrial & Environmental Biotech",
-            "image": "/images/svg/5.svg"
+            "image": "/images/png/5.1.png"
         },
         {
             "title": "Neurotech & Bio-AI",
-            "image": "/images/svg/6.svg"
+            "image": "/images/png/6.1.png"
         },
         {
             "title": "Microbiome & Probiotics",
-            "image": "/images/svg/7.svg"
+            "image": "/images/png/7.1.png"
         },
         {
             "title": "Cosmeceuticals & Functional Ingredients",
-            "image": "/images/svg/8.svg"
+            "image": "/images/png/8.1.png"
         },
         {
             "title": "Synthetic Biology & Biomanufacturing",
-            "image": "/images/svg/9.svg"
+            "image": "/images/png/9.1.png"
         }
     ]
 }

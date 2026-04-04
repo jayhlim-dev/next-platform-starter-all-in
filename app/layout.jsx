@@ -2,21 +2,27 @@ import '../styles/globals.css';
 import { AppChrome } from '../components/app-chrome';
 import { Poppins } from 'next/font/google';
 
-const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+const siteUrl = 'https://www.scalebiopartners.com/';
+
+const description =
+    'Providing personalized support to transform biotech innovations from breakthrough to business.';
 
 export const metadata = {
     metadataBase: new URL(siteUrl),
     title: {
         template: '%s | ScaleBio Partners',
-        default: 'ScaleBio Partners'
+        default: 'ScaleBio Partners | Biotech Consulting Firm'
     },
+    description,
     icons: {
         icon: [{ url: '/images/logo/icon-scb.png', type: 'image/png' }]
     },
     openGraph: {
-        title: 'ScaleBio Partners',
+        type: 'website',
+        url: siteUrl,
+        siteName: 'ScaleBio Partners | Biotech Consulting Firm',
+        title: 'ScaleBio Partners | Biotech Consulting Firm',
+        description,
         images: ['/images/logo/icon-scb.png']
     }
 };

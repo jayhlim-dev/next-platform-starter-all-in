@@ -19,11 +19,12 @@ export default function BoardSection() {
                         type="light"
                         className={clsx(
                             'py-5 px-3 flex rounded-2xl items-center justify-between border-white/10! gap-4! flex-col',
-                            'lg:flex-row lg:px-5 py-4! lg:border-white/20!'
+                            'lg:flex-row lg:px-5 py-4! lg:border-white/20!',
+                            'min-[1700px]:px-[11%]!'
                         )}
                     >
                         {/* <div className="w-20 h-20 bg-[#233587]/40 rounded-full"> */}
-                        <Image src={sector.image} alt="" width={89} height={89} priority />
+                        <Image src={sector.image} alt="" width={89} height={89} unoptimized priority />
                         {/* </div> */}
                         <p
                             className={clsx(
