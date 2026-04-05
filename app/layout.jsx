@@ -23,6 +23,15 @@ export const metadata = {
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description,
         images: ['/images/logo/icon-scb.png']
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'ScaleBio Partners | Biotech Consulting Firm',
+        description,
+        images: ['/images/logo/icon-scb.png']
+    },
+    verification: {
+        google: 'lfTdHtjpuPZgyU8xjBN2-j-ikQXAAFP6fPhIyKfUQa0'
     }
 };
 
