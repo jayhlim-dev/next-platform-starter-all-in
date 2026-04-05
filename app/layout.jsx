@@ -4,8 +4,7 @@ import { Poppins } from 'next/font/google';
 
 const siteUrl = 'https://www.scalebiopartners.com/';
 
-const description =
-    'Providing personalized support to transform biotech innovations from breakthrough to business.';
+const description = 'Providing personalized support to transform biotech innovations from breakthrough to business';
 
 export const metadata = {
     metadataBase: new URL(siteUrl),
