@@ -43,7 +43,7 @@
                 "required": true
             },
             {
-                "label": "Role/Title",
+                "label": "Role / title",
                 "name": "role_title",
                 "placeholder": "e.g., Founder, CSO, Director, Investor",
                 "required": false
@@ -55,19 +55,19 @@
                 "required": true
             },
             {
-                "label": "Work Email",
+                "label": "Work email",
                 "name": "work_email",
                 "placeholder": "Name@company.com",
                 "required": true
             },
             {
-                "label": "Area of Interest",
+                "label": "Area of interest",
                 "name": "area_of_interest",
                 "placeholder": "Enter the topic you'd like to discuss",
                 "required": false
             },
             {
-                "label": "Project Overview",
+                "label": "Project overview",
                 "name": "project_overview",
                 "placeholder": "Briefly describe your scientific focus, development stage, and the support you are seeking.",
                 "required": true

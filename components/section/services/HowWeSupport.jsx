@@ -16,7 +16,7 @@ export default function HowWeSupportSection() {
             <div
                 className={clsx(
                     'flex flex-row  overflow-x-auto no-scrollbar px-8 gap-6',
-                    'lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-x-hidden lg:px-0'
+                    'lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-x-hidden lg:px-0 lg:py-0.5 '
                 )}
             >
                 {work_steps.map((step, index) => (

@@ -135,7 +135,7 @@ export default function ContactFormSection() {
                     {overviewField ? (
                         <div className="col-span-1 flex h-full flex-col gap-1.5">
                             <label
-                                className={clsx('text-sm font-semibold', 'lg:font-medium')}
+                                className={clsx('text-sm font-semibold', 'lg:font-bold')}
                                 htmlFor={overviewField.name}
                             >
                                 {overviewField.required ? <span>*</span> : null}

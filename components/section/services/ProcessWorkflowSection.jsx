@@ -124,7 +124,7 @@ export default function ProcessWorkflowSection() {
 
     const currentDescriptionLength = workflow_process.process_steps[activeStep].title.replace(/\s/g, '').length;
     const textSizeClass =
-        currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl lg:leading-14 leading-10' : 'lg:text-5xl leading-10';
+        currentDescriptionLength > 17 ? 'lg:text-sm lg:text-4xl lg:leading-14 leading-10' : 'lg:text-5xl leading-15';
     return (
         <div className={clsx('flex flex-col gap-6 text-white')}>
             <div className={clsx('flex flex-col gap-2 px-[30px] ', 'lg:px-0!')}>
