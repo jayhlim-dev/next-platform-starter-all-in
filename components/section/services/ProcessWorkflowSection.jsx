@@ -159,7 +159,7 @@ export default function ProcessWorkflowSection() {
                         <div className="flex flex-col gap-4">
                             <h3
                                 className={clsx(
-                                    'flex min-h-[80px] flex-col justify-end text-[34px] font-medium capitalize',
+                                    'flex min-h-[80px] flex-col justify-end text-[34px] font-medium',
                                     textSizeClass,
                                     'lg:block lg:min-h-0 lg:text-4xl lg:text-[54px] lg:justify-start',
                                     'md:min-h-[96px]'

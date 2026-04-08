@@ -13,6 +13,9 @@ export const metadata = {
         default: 'ScaleBio Partners | Biotech Consulting Firm'
     },
     description,
+    alternates: {
+        canonical: siteUrl
+    },
     icons: {
         icon: [{ url: '/images/logo/icon-scb.png', type: 'image/png' }]
     },
@@ -22,10 +25,17 @@ export const metadata = {
         siteName: 'ScaleBio Partners | Biotech Consulting Firm',
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description,
-        images: ['/images/logo/icon-scb.png']
+        images: [
+            {
+                url: '/images/logo/icon-scb.png',
+                width: 141,
+                height: 141,
+                alt: 'ScaleBio Partners'
+            }
+        ]
     },
     twitter: {
-        card: 'summary_large_image',
+        card: 'summary',
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description,
         images: ['/images/logo/icon-scb.png']

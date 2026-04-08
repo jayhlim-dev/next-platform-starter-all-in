@@ -7,11 +7,11 @@
             "description": "Our approach is structured, collaborative, and tailored to each company's needs",
             "process_steps": [
                 {
-                    "title": "Initial contact",
+                    "title": "Initial Contact",
                     "description": "An introductory discussion to understand your company’s vision, scientific focus, stage, and strategic priorities"
                 },
                 {
-                    "title": "Company evaluation",
+                    "title": "Company Evaluation",
                     "description": "A structured assessment of your technology, business positioning, and market opportunity to identify where support can create the most value"
                 },
                 {
@@ -19,11 +19,11 @@
                     "description": "A focused conversation to define the key priorities of the engagement, from product development and partnerships to fundraising and commercialization"
                 },
                 {
-                    "title": "What we can offer",
+                    "title": "What We Can Offer",
                     "description": "A proposal for a tailored consultation outlining the most relevant areas of support, expected deliverables, and strategic outcomes"
                 },
                 {
-                    "title": "Contract agreement",
+                    "title": "Contract Agreement",
                     "description": "A clear agreement is established to align on scope, timelines, responsibilities, and next steps"
                 }
             ]
