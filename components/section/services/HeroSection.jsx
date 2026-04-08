@@ -29,7 +29,7 @@ export default function HeroSection() {
                     className={clsx(
                         'text-sm text-[#E6F5FC] max-w-lg',
                         'md:max-w-[500px]',
-                        'lg:text-[22px]',
+                        'lg:text-[22px] min-[1750px]:max-w-[56%]!',
                         heroTextLgMax
                     )}
                 >

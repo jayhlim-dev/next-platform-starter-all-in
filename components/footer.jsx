@@ -30,7 +30,7 @@ export function Footer() {
                 'w-full flex flex-col gap-16',
                 'xl:px-[162px] lg:pb-13 z-0',
                 'lg:px-[8%]',
-                'min-[1500px]:px-[10%]! min-[1700px]:px-[16%]!'
+                'min-[1500px]:px-[10%]! min-[1700px]:px-[11%]!'
             )}
         >
             <Glass

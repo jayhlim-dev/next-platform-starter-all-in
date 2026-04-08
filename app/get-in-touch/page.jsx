@@ -23,7 +23,7 @@ const SECTION_STAGGER_MS = 200;
 export default function Page() {
     return (
         <div
-            className={clsx('min-h-screen w-full py-16 flex flex-col gap-4 ', 'lg:px-[162px] min-[1700px]:px-[20%]!')}
+            className={clsx('min-h-screen w-full py-16 flex flex-col gap-4 ', 'lg:px-[10%] min-[1700px]:px-[12%]!')}
             aria-label="Get In Touch"
         >
             <div className="absolute top-0 left-0 w-full -z-2 hidden lg:block">

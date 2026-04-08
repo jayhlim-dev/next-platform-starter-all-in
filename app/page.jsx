@@ -29,7 +29,7 @@ const revealedSections = [
 export default function Page() {
     return (
         <div
-            className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%] min-[1700px]:px-[16%]!')}
+            className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%] min-[1700px]:px-[12%]!')}
             aria-label="Home"
         >
             <div className="absolute top-0 left-0 w-full -z-3 hidden lg:block">

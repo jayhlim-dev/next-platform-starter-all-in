@@ -22,7 +22,7 @@ export default function Page() {
                 'min-h-screen w-full py-16 flex flex-col gap-20',
                 // 'lg:px-[min(2000rem,110px)]',
                 'lg:pb-12 lg:px-[5%]',
-                'xl:px-[162px] min-[1700px]:px-[20%]!'
+                'min-[1700px]:px-[12%]!'
             )}
             aria-label="Services"
         >
