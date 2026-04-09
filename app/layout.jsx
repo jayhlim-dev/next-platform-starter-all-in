@@ -16,7 +16,7 @@ export const metadata = {
         canonical: siteUrl
     },
     icons: {
-        icon: [{ url: '/images/logo/icon-scb.png', type: 'image/png' }]
+        icon: [{ url: '/favicon.png', type: 'image/png' }]
     },
     openGraph: {
         type: 'website',
@@ -26,9 +26,9 @@ export const metadata = {
         description,
         images: [
             {
-                url: '/images/logo/icon-scb.png',
-                width: 141,
-                height: 141,
+                url: '/favicon.png',
+                width: 48,
+                height: 48,
                 alt: 'ScaleBio Partners'
             }
         ]
@@ -37,7 +37,7 @@ export const metadata = {
         card: 'summary',
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description,
-        images: ['/images/logo/icon-scb.png']
+        images: ['/favicon.png']
     },
     verification: {
         google: 'lfTdHtjpuPZgyU8xjBN2-j-ikQXAAFP6fPhIyKfUQa0'
