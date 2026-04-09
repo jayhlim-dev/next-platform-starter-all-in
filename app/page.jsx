@@ -4,7 +4,15 @@ import DecisionSupportSection from 'components/section/home/DecisionSupportSecti
 import clsx from 'clsx';
 import { InView } from 'components/in-view';
 import { animationClass } from 'lib/animations';
+import { siteName, siteUrl } from 'lib/site';
 import Image from 'next/image';
+
+const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: siteUrl
+};
 
 /** Delay between each section’s entrance animation (ms). */
 const SECTION_STAGGER_MS = 200;
@@ -32,6 +40,10 @@ export default function Page() {
             className={clsx('min-h-screen w-full flex flex-col gap-16 py-16', 'lg:px-[10%] min-[1700px]:px-[12%]!')}
             aria-label="Home"
         >
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+            />
             <div className="absolute top-0 left-0 w-full -z-3 hidden lg:block">
                 <Image
                     src="/images/desktop/1-a.png"

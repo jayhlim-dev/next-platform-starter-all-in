@@ -1,8 +1,7 @@
 import '../styles/globals.css';
 import { AppChrome } from '../components/app-chrome';
 import { Poppins } from 'next/font/google';
-
-const siteUrl = 'https://www.scalebiopartners.com/';
+import { siteName, siteUrl } from '../lib/site';
 
 const description = 'Providing personalized support to transform biotech innovations from breakthrough to business';
 
@@ -22,7 +21,7 @@ export const metadata = {
     openGraph: {
         type: 'website',
         url: siteUrl,
-        siteName: 'ScaleBio Partners | Biotech Consulting Firm',
+        siteName,
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description,
         images: [
