@@ -1,9 +1,13 @@
 import '../styles/globals.css';
 import { AppChrome } from '../components/app-chrome';
 import { Poppins } from 'next/font/google';
-import { siteName, siteUrl } from '../lib/site';
+import { siteDescription, siteName, siteUrl } from '../lib/site';
 
-const description = 'Providing personalized support to transform biotech innovations from breakthrough to business';
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    colorScheme: 'dark'
+};
 
 export const metadata = {
     metadataBase: new URL(siteUrl),
@@ -11,19 +15,31 @@ export const metadata = {
         template: '%s | ScaleBio Partners',
         default: 'ScaleBio Partners | Biotech Consulting Firm'
     },
-    description,
+    description: siteDescription,
+    applicationName: siteName,
+    referrer: 'origin-when-cross-origin',
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true
+        }
+    },
     alternates: {
         canonical: siteUrl
     },
     icons: {
-        icon: [{ url: '/favicon.png', type: 'image/png' }]
+        icon: [{ url: '/favicon.png', type: 'image/png', sizes: '48x48' }],
+        apple: [{ url: '/favicon.png', sizes: '48x48' }]
     },
     openGraph: {
         type: 'website',
+        locale: 'en_US',
         url: siteUrl,
         siteName,
         title: 'ScaleBio Partners | Biotech Consulting Firm',
-        description,
+        description: siteDescription,
         images: [
             {
                 url: '/favicon.png',
@@ -36,7 +52,7 @@ export const metadata = {
     twitter: {
         card: 'summary',
         title: 'ScaleBio Partners | Biotech Consulting Firm',
-        description,
+        description: siteDescription,
         images: ['/favicon.png']
     },
     verification: {
