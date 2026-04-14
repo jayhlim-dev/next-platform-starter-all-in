@@ -4,13 +4,14 @@ import DecisionSupportSection from 'components/section/home/DecisionSupportSecti
 import clsx from 'clsx';
 import { InView } from 'components/in-view';
 import { animationClass } from 'lib/animations';
-import { siteName, siteUrl } from 'lib/site';
+import { siteAlternateNames, siteName, siteUrl } from 'lib/site';
 import Image from 'next/image';
 
 const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteName,
+    alternateName: siteAlternateNames,
     url: siteUrl
 };
 
