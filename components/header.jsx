@@ -13,7 +13,7 @@ import clsx from 'clsx';
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Services', href: '/services' },
-    { linkText: 'Get In Touch', href: '/get-in-touch' }
+    { linkText: 'Get in Touch', href: '/get-in-touch' }
 ];
 
 export function Header() {

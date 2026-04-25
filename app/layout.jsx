@@ -3,6 +3,13 @@ import { AppChrome } from '../components/app-chrome';
 import { Poppins } from 'next/font/google';
 import { siteDescription, siteName, siteUrl } from '../lib/site';
 
+const socialImage = {
+    url: '/opengraph.png',
+    width: 1200,
+    height: 630,
+    alt: 'ScaleBio Partners'
+};
+
 export const viewport = {
     width: 'device-width',
     initialScale: 1,
@@ -40,20 +47,13 @@ export const metadata = {
         siteName,
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description: siteDescription,
-        images: [
-            {
-                url: '/favicon.png',
-                width: 48,
-                height: 48,
-                alt: 'ScaleBio Partners'
-            }
-        ]
+        images: [socialImage]
     },
     twitter: {
-        card: 'summary',
+        card: 'summary_large_image',
         title: 'ScaleBio Partners | Biotech Consulting Firm',
         description: siteDescription,
-        images: ['/favicon.png']
+        images: [socialImage.url]
     },
     verification: {
         google: 'lfTdHtjpuPZgyU8xjBN2-j-ikQXAAFP6fPhIyKfUQa0'
